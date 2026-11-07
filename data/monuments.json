@@ -1,0 +1,596 @@
+[
+  {
+    "slug": "charminar",
+    "name": "Charminar",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "lat": 17.3616,
+    "lon": 78.4747,
+    "wikipedia_title": "Charminar",
+    "built_by": "Muhammad Quli Qutb Shah, fifth sultan of the Qutb Shahi dynasty",
+    "construction_period": "1591",
+    "architectural_style": "Indo-Islamic (Qutb Shahi / Deccani) with Persian influences",
+    "materials": [
+      "Granite",
+      "Limestone",
+      "Lime mortar",
+      "Lime stucco"
+    ],
+    "unesco": "Tentative list (as part of 'Qutb Shahi Monuments of Hyderabad: Golconda Fort, Qutb Shahi Tombs, Charminar', submitted 2010)",
+    "tagline": "The four-minaret gateway that marks the heart of Hyderabad's old city since 1591",
+    "summary": "The Charminar is a square monument with four arches and four tall minarets, built in 1591 by Muhammad Quli Qutb Shah when the Qutb Shahi capital moved from Golconda to the new city of Hyderabad. It stands at the centre of the old city's historic street grid and has become the best-known symbol of Hyderabad. A small mosque occupies the upper floor.",
+    "history": "The Charminar was commissioned by Muhammad Quli Qutb Shah, the fifth ruler of the Qutb Shahi dynasty, which governed the Golconda Sultanate in the Deccan. By the late sixteenth century the walled fortress of Golconda had become crowded, and the sultan founded a new city, Hyderabad, on the banks of the Musi river. The Charminar was built in 1591 as the centrepiece of this planned city.\n\nSeveral traditions explain why the monument was built. A widely repeated account holds that it commemorates the end of a plague epidemic, while other historians emphasise its role as a ceremonial focal point for the new capital, from which the main streets and markets radiated. The precise motive is not recorded with certainty in contemporary sources.\n\nAfter the Mughal emperor Aurangzeb conquered Golconda in 1687, Hyderabad passed under Mughal control and later became the seat of the Asaf Jahi Nizams in the eighteenth century. The Charminar remained the visual heart of the old city through these changes. Clocks were added to the four faces in the late nineteenth century, during the Nizam period.\n\nToday the Charminar is a centrally protected monument maintained by the Archaeological Survey of India (ASI). The surrounding area, including Laad Bazaar and the Mecca Masjid, forms one of Hyderabad's busiest historic commercial districts.",
+    "architecture": "The Charminar is a square structure, each side roughly 20 metres long, with a large pointed arch opening onto each of the four sides. At each corner rises a minaret of about 56 metres, divided into storeys by projecting balconies and topped by a bulbous dome with petal-like motifs. Spiral staircases inside the minarets lead to the upper levels.\n\nThe building is constructed largely of granite and limestone set in lime mortar, with extensive decorative lime stucco work on the arches, balustrades and parapets. The upper storey contains a small mosque on its western side, oriented towards Mecca, and an open roof terrace. The design blends Persian-influenced Islamic architectural vocabulary with local Deccani craftsmanship that is characteristic of Qutb Shahi buildings.",
+    "significance": "The Charminar is the emblem of Hyderabad and appears widely as a civic and cultural symbol of the city and of Telangana. It is a key surviving example of Qutb Shahi urban architecture and of the deliberate town planning that accompanied the founding of Hyderabad.\n\nTogether with Golconda Fort and the Qutb Shahi Tombs, it is included on India's Tentative List for UNESCO World Heritage status, reflecting its importance to the history of the Deccan sultanates.",
+    "known_conservation_issues": "Located at a dense traffic junction, the Charminar has long been exposed to vehicular emissions and dust, which contribute to discolouration and the formation of soiled crusts on the stucco and stone surfaces. Pollution and vibration from heavy traffic have been repeatedly cited as concerns, and the authorities have pursued a pedestrianisation project around the monument to reduce vehicle movement in its immediate vicinity.\n\nThe lime stucco ornamentation is vulnerable to weathering, moisture and age. In 2019 a portion of stucco ornamentation fell from one of the minarets, which drew attention to the condition of the decorative plaster; the ASI has carried out repair and conservation of the minarets and stucco work using lime-based materials.\n\nVisitor numbers, street vending and commercial activity in the surrounding bazaar area also place pressure on the monument and its setting, and the management of encroachments and crowds remains an ongoing challenge.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North face – facing Gulzar Houz and the Char Kaman arches"
+      },
+      {
+        "id": "east",
+        "label": "East elevation"
+      },
+      {
+        "id": "south",
+        "label": "South face – towards the Mecca Masjid side of the square"
+      },
+      {
+        "id": "west",
+        "label": "West face – towards Laad Bazaar; mosque on the upper floor"
+      }
+    ]
+  },
+  {
+    "slug": "golconda-fort",
+    "name": "Golconda Fort",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "lat": 17.3831,
+    "lon": 78.4011,
+    "wikipedia_title": "Golconda",
+    "built_by": "Originally the Kakatiya dynasty; greatly expanded by the Qutb Shahi dynasty",
+    "construction_period": "c. 13th century origins; major expansion 16th–17th century",
+    "architectural_style": "Deccani / Indo-Islamic military architecture",
+    "materials": [
+      "Granite",
+      "Lime mortar",
+      "Lime stucco",
+      "Brick"
+    ],
+    "unesco": "Tentative list (as part of 'Qutb Shahi Monuments of Hyderabad: Golconda Fort, Qutb Shahi Tombs, Charminar', submitted 2010)",
+    "tagline": "Granite citadel of the Qutb Shahis, once famed for the diamond trade",
+    "summary": "Golconda Fort is a fortified citadel on a granite hill on the western edge of Hyderabad. Originating as an earlier fort associated with the Kakatiya dynasty, it became the capital of the Qutb Shahi sultans from the early sixteenth century until Hyderabad was founded. It is known for its massive walls, gateways, acoustic design and its historical association with the diamond trade.",
+    "history": "The origins of Golconda lie in an earlier fort associated with the Kakatiya dynasty of Warangal. In the fourteenth century the region came under the control of the Bahmani Sultanate, which ruled much of the Deccan.\n\nIn 1518 Sultan Quli Qutb-ul-Mulk, a Bahmani governor of the region, asserted independence and founded the Qutb Shahi dynasty with Golconda as its capital. Over the following decades he and his successors rebuilt and enlarged the fort into a vast granite stronghold with multiple lines of walls, bastions and gateways, and a fortified town developed within.\n\nGolconda was a major centre of the diamond trade. Diamonds mined in the region, especially in the Krishna river valley, were traded through Golconda, and the name became synonymous with fine diamonds; several famous historical stones are described as Golconda diamonds.\n\nIn 1591 Muhammad Quli Qutb Shah founded Hyderabad nearby, and the court gradually moved there, though Golconda remained an important stronghold. In 1687 the Mughal emperor Aurangzeb captured the fort after a prolonged siege, ending the Qutb Shahi dynasty. The fort subsequently declined and fell into ruin in parts. It is now a protected monument under the Archaeological Survey of India.",
+    "architecture": "The fort is built on and around a granite hill, with the citadel known as the Bala Hisar at its summit. It is enclosed by several concentric lines of fortification walls with numerous bastions, and is entered through massive gateways such as the Fateh Darwaza, which is studded with iron spikes intended to deter elephant charges.\n\nThe fort is noted for its acoustic design: a handclap made at a particular spot near the main entrance pavilion can reportedly be heard at the Bala Hisar high above, which is said to have served as a warning system. Within the walls are the remains of palaces, mosques, audience halls, armouries, granaries and water-supply works, including reservoirs and channels used to raise and distribute water through the complex.",
+    "significance": "Golconda was the political and economic centre of one of the major Deccan sultanates and a key node in the historic global trade in diamonds. Its fortifications illustrate the development of military architecture in the Deccan between the Kakatiya and Qutb Shahi periods.\n\nAs the precursor to Hyderabad, it is central to the history of the city, and it forms part of the group of Qutb Shahi monuments on India's Tentative List for UNESCO World Heritage status.",
+    "known_conservation_issues": "Large sections of the fortification walls are built of dry or lime-mortared granite masonry, and portions have been reported to collapse or bulge after heavy monsoon rains, requiring periodic repair by the ASI. Vegetation growing in joints of the masonry contributes to the loosening of stones.\n\nUrban growth around the fort has led to encroachments close to the outer walls and within the historic fortified area, a concern repeatedly raised in discussions of the site's protection and its UNESCO nomination.\n\nThe fort receives large numbers of visitors, and graffiti, littering and wear on paths and stairways have been noted as problems. Illumination and sound-and-light installations also require careful management to avoid impact on the historic fabric.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North elevation"
+      },
+      {
+        "id": "east",
+        "label": "East side – main approach via the Fateh Darwaza"
+      },
+      {
+        "id": "south",
+        "label": "South elevation"
+      },
+      {
+        "id": "west",
+        "label": "West elevation"
+      }
+    ]
+  },
+  {
+    "slug": "qutb-shahi-tombs",
+    "name": "Qutb Shahi Tombs",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "lat": 17.395,
+    "lon": 78.396,
+    "wikipedia_title": "Qutb Shahi tombs",
+    "built_by": "Rulers of the Qutb Shahi dynasty",
+    "construction_period": "16th–17th century",
+    "architectural_style": "Qutb Shahi / Deccani Indo-Islamic with Persian influences",
+    "materials": [
+      "Granite",
+      "Lime mortar",
+      "Lime stucco",
+      "Glazed tiles"
+    ],
+    "unesco": "Tentative list (as part of 'Qutb Shahi Monuments of Hyderabad: Golconda Fort, Qutb Shahi Tombs, Charminar', submitted 2010)",
+    "tagline": "A royal necropolis of domed tombs beside Golconda's walls",
+    "summary": "The Qutb Shahi Tombs are a necropolis containing the domed tombs of the rulers of the Qutb Shahi dynasty and members of their families, located in the Ibrahim Bagh area near Golconda Fort. Built over roughly a century and a half, the complex includes mausoleums, mosques and a mortuary bath. It is one of the largest concentrations of Qutb Shahi architecture.",
+    "history": "The Qutb Shahi dynasty ruled the Golconda Sultanate from 1518 until the Mughal conquest of 1687. Its rulers chose a site just outside the walls of Golconda as their royal burial ground, and the necropolis grew over successive reigns.\n\nThe earliest major tomb is that of the dynasty's founder, Sultan Quli Qutb-ul-Mulk. Subsequent rulers, including Muhammad Quli Qutb Shah, the founder of Hyderabad, were buried in increasingly monumental mausoleums. Tombs of queens, princes, nobles and other members of the court also stand in the complex.\n\nThe last sultan, Abul Hasan Qutb Shah (Tana Shah), was imprisoned by Aurangzeb after the fall of Golconda in 1687 and died in captivity outside the region, so the tomb intended for him was never completed. After the end of the dynasty the complex was neglected for long periods, and it was later repaired during the time of the Nizams.\n\nSince the 2010s the complex has been the focus of a large-scale conservation programme carried out by the Aga Khan Trust for Culture in partnership with the Telangana government, as part of the wider Qutb Shahi Heritage Park.",
+    "architecture": "The typical Qutb Shahi tomb consists of a square chamber surmounted by a large bulbous dome set on a petalled drum, raised on a plinth or terrace and surrounded by arcaded galleries. Minarets or small turrets mark the corners, and the parapets carry ornamental stucco work. Many tombs originally bore glazed tile decoration, of which fragments survive.\n\nThe structures are built mainly of granite rubble and dressed stone set in lime mortar, finished with lime plaster and stucco. Besides the tombs, the complex includes mosques, a mortuary bath (hammam) used for ritual washing of the deceased, stepwells and gardens, illustrating a distinctive Deccani synthesis of Persian and local building traditions.",
+    "significance": "The necropolis is a rare instance of an entire royal dynasty's burial ground surviving together at one site, and it documents the evolution of Qutb Shahi funerary architecture over its full span.\n\nIt forms part of the group of Qutb Shahi monuments on India's Tentative List for UNESCO World Heritage status, and its recent conservation has been widely cited as a model of the use of traditional lime-based techniques.",
+    "known_conservation_issues": "Before the recent conservation programme, many tombs suffered from water ingress through roofs and domes, cracking, loss of stucco ornament and the effects of earlier repairs carried out with cement, which is incompatible with the original lime-based masonry. Conservation work has involved removing inappropriate cement layers and restoring lime plaster and stucco using traditional methods.\n\nVegetation growth on domes and terraces, damage to the original glazed tilework, and the deterioration of the stepwells and surrounding landscape have also been documented. Ongoing maintenance, monsoon water management and the pressures of urban development around the heritage park remain concerns.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North elevation"
+      },
+      {
+        "id": "east",
+        "label": "East elevation"
+      },
+      {
+        "id": "south",
+        "label": "South elevation"
+      },
+      {
+        "id": "west",
+        "label": "West elevation"
+      }
+    ]
+  },
+  {
+    "slug": "taj-mahal",
+    "name": "Taj Mahal",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "lat": 27.175,
+    "lon": 78.0419,
+    "wikipedia_title": "Taj Mahal",
+    "built_by": "Mughal emperor Shah Jahan, in memory of his wife Mumtaz Mahal",
+    "construction_period": "c. 1632–1653",
+    "architectural_style": "Mughal architecture (Indo-Islamic with Persian influences)",
+    "materials": [
+      "White Makrana marble",
+      "Red sandstone",
+      "Brick",
+      "Semi-precious stones (pietra dura inlay)"
+    ],
+    "unesco": "World Heritage Site, inscribed 1983",
+    "tagline": "Shah Jahan's white-marble mausoleum on the banks of the Yamuna",
+    "summary": "The Taj Mahal is a white marble mausoleum on the southern bank of the Yamuna river in Agra, commissioned by the Mughal emperor Shah Jahan to house the tomb of his wife Mumtaz Mahal. Set within a formal garden and flanked by a mosque and a guest house, it is widely regarded as the finest achievement of Mughal architecture. It was inscribed as a UNESCO World Heritage Site in 1983.",
+    "history": "Mumtaz Mahal, the wife of the Mughal emperor Shah Jahan, died in 1631 in Burhanpur while giving birth. Shah Jahan resolved to build a monumental tomb for her in Agra, then one of the principal Mughal capitals, on land along the Yamuna river.\n\nConstruction began around 1632. The main mausoleum was largely completed by the early 1640s, while work on the surrounding complex, including the gateway, mosque, guest house and gardens, continued until around 1653. Thousands of artisans and labourers were employed, and materials were brought from across the empire and beyond. Ustad Ahmad Lahauri is generally identified as the principal architect.\n\nShah Jahan was deposed by his son Aurangzeb in 1658 and spent his last years confined in Agra Fort. On his death in 1666 he was buried beside Mumtaz Mahal in the Taj Mahal.\n\nIn later centuries, as Mughal power declined, the complex suffered neglect and some looting of its decoration. Under British rule, a major restoration was undertaken in the early twentieth century during the viceroyalty of Lord Curzon. Today the monument is protected and maintained by the Archaeological Survey of India.",
+    "architecture": "The mausoleum stands on a square marble plinth with a minaret at each corner. The building itself is an irregular octagon in plan with large arched recesses (iwans) on each face, surmounted by a great onion-shaped double dome and four smaller domed kiosks (chhatris). The cenotaphs of Mumtaz Mahal and Shah Jahan lie in the central chamber, with the actual graves in a crypt below.\n\nThe structure has a brick core faced with white marble from Makrana in Rajasthan. Its surfaces are decorated with Quranic calligraphy in inlaid black stone, carved relief panels of flowering plants, and pietra dura (parchin kari) inlay using semi-precious stones.\n\nThe tomb is the culmination of a symmetrical complex laid out on a north–south axis: a monumental red sandstone gateway opens onto a charbagh garden divided by water channels, with the mausoleum at the river end. It is flanked to the west by a red sandstone mosque and to the east by a matching building, the jawab, which balances the composition.",
+    "significance": "The Taj Mahal is considered the masterpiece of Mughal architecture and one of the most celebrated buildings in the world. It brings together Persian, Central Asian and Indian architectural traditions in a highly refined and symmetrical design.\n\nIt is a powerful symbol of India internationally and among the most visited monuments in the country. UNESCO describes it as a jewel of Muslim art in India and one of the universally admired masterpieces of the world's heritage.",
+    "known_conservation_issues": "Air pollution has been the most widely documented threat. Deposits of particulate matter, including black carbon and dust, have been linked by scientific studies to yellowing and browning of the marble. In response, the Supreme Court of India issued directions in the 1990s restricting polluting industries in the Taj Trapezium Zone, an area defined around the monument, and vehicles are restricted near the complex.\n\nThe ASI has periodically cleaned the marble surfaces using a clay-based poultice (often described as a mud-pack treatment) to draw out deposits. Insects breeding in the polluted Yamuna have also been reported to leave stains on the marble on the river side.\n\nOther concerns raised include the condition and flow of the Yamuna river behind the monument, the effect of groundwater changes on the foundations, and the very high number of visitors. Measures such as timed tickets and limits on access to the main mausoleum have been introduced to manage tourism pressure.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North face – riverfront facing the Yamuna and Mehtab Bagh"
+      },
+      {
+        "id": "east",
+        "label": "East face – towards the jawab (guest house)"
+      },
+      {
+        "id": "south",
+        "label": "South face – main view across the charbagh garden from the great gateway"
+      },
+      {
+        "id": "west",
+        "label": "West face – towards the mosque"
+      }
+    ]
+  },
+  {
+    "slug": "red-fort",
+    "name": "Red Fort",
+    "city": "Delhi",
+    "state": "Delhi",
+    "lat": 28.6562,
+    "lon": 77.241,
+    "wikipedia_title": "Red Fort",
+    "built_by": "Mughal emperor Shah Jahan",
+    "construction_period": "1639–1648",
+    "architectural_style": "Mughal architecture (Indo-Islamic with Persian and Timurid influences)",
+    "materials": [
+      "Red sandstone",
+      "White marble",
+      "Brick",
+      "Lime mortar"
+    ],
+    "unesco": "World Heritage Site, inscribed 2007 (as 'Red Fort Complex')",
+    "tagline": "Shah Jahan's red sandstone palace-fortress, where India's flag rises each August",
+    "summary": "The Red Fort is a fortified palace complex in Old Delhi built by Shah Jahan as the citadel of his new capital, Shahjahanabad. Its red sandstone walls enclose audience halls, private apartments, gardens and other structures that served as the residence of the Mughal emperors for nearly two centuries. It is the site where the Prime Minister of India hoists the national flag on Independence Day.",
+    "history": "In 1638 the Mughal emperor Shah Jahan decided to move his capital from Agra to Delhi, where he founded the walled city of Shahjahanabad. The fort was built as its palace-citadel between 1639 and 1648 on the bank of the Yamuna river, and is traditionally credited to the architect Ustad Ahmad Lahauri.\n\nThe fort remained the main residence of the Mughal emperors through the later Mughal period. In 1739 the Persian ruler Nadir Shah sacked Delhi and carried away great treasures, including the Peacock Throne, which had stood in the fort's Diwan-i-Khas.\n\nDuring the uprising of 1857, the last Mughal emperor, Bahadur Shah Zafar, was proclaimed the symbolic leader of the rebellion. After the British recaptured Delhi he was tried and exiled, and the fort was taken over as a military garrison. Many of the palace buildings and gardens were demolished and replaced with barracks.\n\nThe fort was the site of the trials of officers of the Indian National Army in 1945–46. On 15 August 1947, India's first Prime Minister, Jawaharlal Nehru, raised the national flag here, and the Prime Minister has addressed the nation from its ramparts on Independence Day ever since. The fort was handed over from the military to the Archaeological Survey of India in the early 2000s.",
+    "architecture": "The fort is an irregular octagon in plan, enclosed by massive red sandstone walls. Its two principal gateways are the Lahori Gate on the west, facing Chandni Chowk, and the Delhi Gate on the south. The covered bazaar of the Chhatta Chowk leads from the Lahori Gate towards the palace area.\n\nWithin, the public audience hall (Diwan-i-Aam) and the private audience hall (Diwan-i-Khas) are the major ceremonial buildings, the latter of white marble with inlaid and gilded decoration. A row of pavilions, including the Rang Mahal and the Khas Mahal, was laid out along the former riverfront and linked by a water channel known as the Nahr-i-Bihisht (Stream of Paradise).\n\nThe architecture combines Persian, Timurid and Indian traditions and represents a mature phase of Shah Jahan's building style, which also influenced later palace architecture in Rajasthan, Delhi and elsewhere.",
+    "significance": "The Red Fort was the political and ceremonial centre of the Mughal Empire for nearly two hundred years and represents the zenith of Mughal palace planning. UNESCO also recognises it for its layered history, including the changes made during the British period.\n\nSince 1947 it has been a national symbol of Indian independence, and the annual Independence Day ceremony on its ramparts gives it unique civic importance.",
+    "known_conservation_issues": "Delhi's severe air pollution affects the fort's surfaces, contributing to the soiling and darkening of red sandstone and marble. The sandstone is also subject to weathering, flaking and salt-related deterioration, and the ASI has undertaken surface cleaning and repair works.\n\nThe extensive demolitions and military alterations of the British period, and the long use of parts of the fort by the army after Independence, left the complex with lost structures and incompatible later additions; restoration of gardens, water channels and buildings has been an ongoing effort.\n\nVery high visitor numbers and large ceremonial events place pressure on the monument. In 2018 an agreement under the government's 'Adopt a Heritage' scheme to involve a private company in visitor amenities drew public debate about the management of heritage sites.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North side – towards Salimgarh Fort"
+      },
+      {
+        "id": "east",
+        "label": "East side – former Yamuna riverfront with the palace pavilions"
+      },
+      {
+        "id": "south",
+        "label": "South side – Delhi Gate"
+      },
+      {
+        "id": "west",
+        "label": "West side – Lahori Gate facing Chandni Chowk"
+      }
+    ]
+  },
+  {
+    "slug": "qutub-minar",
+    "name": "Qutub Minar",
+    "city": "Delhi",
+    "state": "Delhi",
+    "lat": 28.5244,
+    "lon": 77.1852,
+    "wikipedia_title": "Qutb Minar",
+    "built_by": "Begun by Qutb ud-Din Aibak; continued by Iltutmish; repaired and extended under Firoz Shah Tughlaq",
+    "construction_period": "Begun c. 1199; upper storeys completed in the 13th–14th centuries",
+    "architectural_style": "Early Indo-Islamic (Delhi Sultanate)",
+    "materials": [
+      "Red sandstone",
+      "Buff sandstone",
+      "White marble"
+    ],
+    "unesco": "World Heritage Site, inscribed 1993 (as 'Qutb Minar and its Monuments, Delhi')",
+    "tagline": "A fluted sandstone tower from the dawn of the Delhi Sultanate",
+    "summary": "The Qutub Minar is a tapering, fluted tower of five storeys, about 73 metres tall, in the Mehrauli area of Delhi. Begun around 1199 by Qutb ud-Din Aibak and completed by his successors, it stands within a complex that includes the Quwwat-ul-Islam mosque, the ancient Iron Pillar and the Alai Darwaza. The complex was inscribed as a UNESCO World Heritage Site in 1993.",
+    "history": "After the Ghurid conquest of northern India in the late twelfth century, Qutb ud-Din Aibak, who later became the first sultan of Delhi, began construction of the Quwwat-ul-Islam mosque and the adjoining minaret at Mehrauli. Many columns and building materials of the mosque were taken from earlier Hindu and Jain temples on the site, as recorded in an inscription.\n\nAibak completed only the first storey of the minar. His successor Iltutmish added further storeys in the early thirteenth century. After the tower was damaged by lightning in the fourteenth century, Firoz Shah Tughlaq carried out repairs and rebuilt the uppermost part, giving the minar its present five storeys.\n\nLater damage, including from an earthquake in the early nineteenth century, led to repairs under British supervision. A cupola added on top by Major Robert Smith in the 1820s was later removed and now stands on the lawn of the complex.\n\nIn the early fourteenth century Alauddin Khalji enlarged the mosque, built the Alai Darwaza gateway (1311) and began an even larger minaret, the Alai Minar, which was abandoned unfinished after his death. Access to the interior of the Qutub Minar was closed to the public following a fatal stampede in 1981.",
+    "architecture": "The minar tapers from a base diameter of about 14.3 metres to about 2.7 metres at the top. The first three storeys are of red and buff sandstone with alternating angular and rounded flutes; the fourth and fifth storeys, rebuilt under Firoz Shah Tughlaq, incorporate white marble. Each storey is separated by a projecting balcony supported on muqarnas (stalactite) corbels.\n\nBands of carved inscriptions in Arabic and Nagari scripts encircle the tower, recording aspects of its construction and repairs. A spiral staircase of several hundred steps runs inside.\n\nThe surrounding complex includes the Quwwat-ul-Islam mosque, among the earliest surviving mosques in India; the Iron Pillar, an iron column generally dated to the Gupta period and known for its resistance to corrosion; the Alai Darwaza, an early example of true arches and domes in India; the tomb of Iltutmish; and the unfinished Alai Minar.",
+    "significance": "The Qutub Minar is among the earliest and most important monuments of Islamic architecture in India and marks the establishment of the Delhi Sultanate. Its form and decoration influenced later minarets and towers in the subcontinent.\n\nThe wider complex documents several centuries of building, from the reused temple elements and the Iron Pillar to Khalji and Tughlaq additions, making it a key site for the study of medieval Indian architecture.",
+    "known_conservation_issues": "The minar has historically been damaged by lightning and earthquakes, and its slender, tall form makes structural stability an ongoing focus of monitoring. A slight inclination of the tower has been noted and studied over time.\n\nDelhi's air pollution contributes to soiling and weathering of the carved sandstone, and the fine relief inscriptions are susceptible to erosion. The ASI carries out periodic cleaning and conservation of the stonework.\n\nThe complex receives large numbers of visitors, and controlling access, preventing touching or defacement of carvings, and managing crowding have been concerns, particularly after the 1981 stampede that led to the closure of the interior staircase.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North elevation"
+      },
+      {
+        "id": "east",
+        "label": "East elevation"
+      },
+      {
+        "id": "south",
+        "label": "South elevation"
+      },
+      {
+        "id": "west",
+        "label": "West elevation"
+      }
+    ]
+  },
+  {
+    "slug": "hampi",
+    "name": "Hampi",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "lat": 15.3352,
+    "lon": 76.4587,
+    "wikipedia_title": "Hampi",
+    "built_by": "Rulers of the Vijayanagara Empire (Sangama, Saluva and Tuluva dynasties)",
+    "construction_period": "14th–16th century",
+    "architectural_style": "Vijayanagara architecture (Dravidian), with Indo-Islamic elements in some civic buildings",
+    "materials": [
+      "Granite",
+      "Brick",
+      "Lime mortar",
+      "Lime stucco"
+    ],
+    "unesco": "World Heritage Site, inscribed 1986 (as 'Group of Monuments at Hampi'); on the List of World Heritage in Danger 1999–2006",
+    "tagline": "Ruins of the Vijayanagara capital amid boulders on the Tungabhadra",
+    "summary": "Hampi was the capital of the Vijayanagara Empire, one of the largest and wealthiest kingdoms of medieval South India. Its ruins, spread across a rocky landscape along the Tungabhadra river, include temples, palaces, markets, aqueducts and fortifications. The city was sacked after the Battle of Talikota in 1565, and the surviving monuments were inscribed as a UNESCO World Heritage Site in 1986.",
+    "history": "The area around Hampi was a sacred site long before the Vijayanagara period, associated with the goddess Pampa and the god Virupaksha, and identified in tradition with Kishkindha of the Ramayana. In the 1330s the brothers Harihara and Bukka of the Sangama dynasty founded the Vijayanagara kingdom with its capital here.\n\nThe empire expanded over the following two centuries under the Sangama, Saluva and Tuluva dynasties, reaching its height under Krishnadevaraya in the early sixteenth century. The capital grew into one of the largest cities of its time, and foreign visitors, including Persian and Portuguese travellers, left accounts describing its wealth, markets and festivals.\n\nIn 1565 the Vijayanagara army was defeated at the Battle of Talikota by an alliance of Deccan sultanates. The capital was subsequently plundered and largely abandoned, and the empire's centre shifted elsewhere.\n\nThe ruins attracted the attention of surveyors and archaeologists from the nineteenth century onwards. Today the site is managed by the Archaeological Survey of India together with Karnataka state agencies, and the Virupaksha Temple remains an active place of worship.",
+    "architecture": "Vijayanagara temple architecture developed the Dravidian tradition with tall gopurams (gateway towers), large pillared halls (mandapas) and richly carved composite pillars. The Virupaksha Temple, with its towering eastern gopuram, and the Vittala Temple complex, with its stone chariot shrine and finely carved pillared halls, are among the most celebrated examples. Temples were often accompanied by long colonnaded market streets (bazaars).\n\nThe royal centre contains platforms, palace foundations, stepped tanks, aqueducts and civic buildings such as the Lotus Mahal and the Elephant Stables, which show the incorporation of arches and domes from Indo-Islamic architecture. Most structures are built from the local granite, with brick and lime-plaster superstructures on some towers and roofs.",
+    "significance": "Hampi preserves the remains of a major medieval Indian imperial capital, with an exceptional range of religious, royal, civic and military buildings set within a dramatic natural landscape. It is a key source for understanding the culture, economy and urban planning of the Vijayanagara Empire.\n\nThe Vijayanagara architectural style influenced later temple building across South India, and the site continues to hold religious significance for pilgrims.",
+    "known_conservation_issues": "Hampi was placed on UNESCO's List of World Heritage in Danger in 1999, mainly because of concerns over the construction of road bridges and associated traffic within the protected area, and was removed from the list in 2006 after corrective measures. Uncontrolled development, commercial activity and encroachments around the monuments have been recurring concerns, and the old Hampi Bazaar area saw clearances of shops and houses in the 2010s.\n\nThe Tungabhadra river periodically floods, and high water levels have submerged riverside mandapas and structures during heavy monsoons. Weathering of granite, vegetation growth and the instability of some pillared halls have also been documented.\n\nVandalism has been reported; in 2019 a widely circulated video showed people toppling stone pillars at the site, leading to arrests and the restoration of the pillars. Growing tourism places additional pressure on the fragile ruins.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North side – towards the Tungabhadra river"
+      },
+      {
+        "id": "east",
+        "label": "East side – Virupaksha Temple gopuram and Hampi Bazaar"
+      },
+      {
+        "id": "south",
+        "label": "South side – towards the royal centre"
+      },
+      {
+        "id": "west",
+        "label": "West elevation"
+      }
+    ]
+  },
+  {
+    "slug": "ajanta-caves",
+    "name": "Ajanta Caves",
+    "city": "Ajanta",
+    "state": "Maharashtra",
+    "lat": 20.5533,
+    "lon": 75.7003,
+    "wikipedia_title": "Ajanta Caves",
+    "built_by": "Buddhist communities under the patronage of rulers and donors, notably in the Satavahana period and under the Vakataka dynasty",
+    "construction_period": "c. 2nd century BCE – c. 5th century CE",
+    "architectural_style": "Buddhist rock-cut architecture (chaitya halls and viharas)",
+    "materials": [
+      "Basalt (rock-cut)",
+      "Mud and lime plaster",
+      "Mineral pigments"
+    ],
+    "unesco": "World Heritage Site, inscribed 1983",
+    "tagline": "Rock-cut Buddhist caves holding some of India's finest ancient murals",
+    "summary": "The Ajanta Caves are about thirty rock-cut Buddhist cave monuments carved into a horseshoe-shaped cliff above the Waghur river in Maharashtra. Created in two main phases between around the second century BCE and the fifth century CE, they include prayer halls and monasteries decorated with sculpture and celebrated wall paintings. They were inscribed as a UNESCO World Heritage Site in 1983.",
+    "history": "The earliest caves at Ajanta were excavated around the second and first centuries BCE, during a period often associated with the Satavahana dynasty. These early caves were used by Buddhist monks as chaitya halls (prayer halls) and viharas (monasteries).\n\nAfter a long gap, a second and much larger phase of excavation took place in the fifth century CE, associated with the reign of the Vakataka ruler Harishena and his courtiers, according to inscriptions. Many of the most elaborate caves and paintings date from this phase. Work on several caves appears to have stopped abruptly, leaving some unfinished.\n\nThe caves were later abandoned and gradually became overgrown. In 1819 a British officer, John Smith, came upon one of the caves while on a hunting expedition, bringing the site to wider attention. Through the nineteenth century artists and scholars made copies of the paintings, some of which were later lost in fires.\n\nDuring the early twentieth century, when the region was part of Hyderabad State, conservation work was undertaken on the paintings. The caves are now protected by the Archaeological Survey of India.",
+    "architecture": "The caves are cut directly into the Deccan basalt cliff face. Chaitya halls such as Caves 9, 10, 19 and 26 have apsidal plans with rows of columns and a stupa at the rear, often with a large horseshoe-shaped window above the entrance. Viharas consist of a central hall surrounded by monks' cells, and in the later phase many also contain a shrine with a Buddha image.\n\nThe walls and ceilings were coated with layers of mud-based plaster and lime wash and painted with mineral pigments. The paintings depict Jataka tales and episodes from the life of the Buddha, together with courtly scenes, figures and decorative motifs, and are among the finest surviving examples of ancient Indian painting.",
+    "significance": "Ajanta is one of the most important surviving records of early Indian Buddhist art and of ancient Indian painting in particular. Its murals provide rare evidence of the dress, architecture and social life of their time.\n\nThe caves influenced the development of Buddhist art across South and Southeast Asia, and they remain a key reference point for the study of Indian art history.",
+    "known_conservation_issues": "The wall paintings are extremely fragile. Moisture, temperature and humidity fluctuations, dust, insects and the activity of bats have been documented as causes of deterioration, along with flaking and loss of the painted plaster.\n\nSome early twentieth-century treatments applied varnish or shellac to the paintings, which later darkened and became a problem in its own right; the ASI's conservation work has included removing such layers and stabilising the plaster. Water seepage through cracks in the rock is a further concern during the monsoon.\n\nLarge visitor numbers raise humidity and carbon dioxide levels inside the caves and increase the risk of physical damage. Measures such as controlled lighting, restricted numbers in certain caves, shuttle buses from a distant parking area and replica-based visitor centres have been introduced to reduce pressure.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North elevation"
+      },
+      {
+        "id": "east",
+        "label": "East elevation"
+      },
+      {
+        "id": "south",
+        "label": "South elevation"
+      },
+      {
+        "id": "west",
+        "label": "West elevation"
+      }
+    ]
+  },
+  {
+    "slug": "ellora-caves",
+    "name": "Ellora Caves",
+    "city": "Ellora",
+    "state": "Maharashtra",
+    "lat": 20.0239,
+    "lon": 75.1792,
+    "wikipedia_title": "Ellora Caves",
+    "built_by": "Successive patrons including the Kalachuri, Chalukya and Rashtrakuta dynasties; the Kailasa temple is attributed to the Rashtrakuta king Krishna I",
+    "construction_period": "c. 6th–10th century CE",
+    "architectural_style": "Rock-cut architecture (Buddhist, Hindu and Jain)",
+    "materials": [
+      "Basalt (rock-cut)",
+      "Lime plaster",
+      "Mineral pigments"
+    ],
+    "unesco": "World Heritage Site, inscribed 1983",
+    "tagline": "Buddhist, Hindu and Jain caves side by side, crowned by the monolithic Kailasa",
+    "summary": "The Ellora Caves are a group of 34 principal rock-cut monuments excavated into the basalt Charanandri hills in Maharashtra, comprising Buddhist, Hindu and Jain caves created between roughly the sixth and tenth centuries CE. The site's most famous monument is the Kailasa temple (Cave 16), a complete temple carved from a single mass of rock. Ellora was inscribed as a UNESCO World Heritage Site in 1983.",
+    "history": "Excavation at Ellora took place over several centuries. The Buddhist caves (Caves 1–12), Hindu caves (Caves 13–29) and Jain caves (Caves 30–34) were created broadly in overlapping phases, reflecting the coexistence of these religious traditions in the region.\n\nThe early Hindu and Buddhist caves date from around the sixth and seventh centuries, a period associated with dynasties such as the Kalachuris and Chalukyas. The Rashtrakuta dynasty, which ruled much of the Deccan from the eighth century, was a major patron; the Kailasa temple is generally attributed to the Rashtrakuta king Krishna I.\n\nThe Jain caves were excavated later, broadly in the ninth and tenth centuries. Ellora lay along historic trade routes and remained a known pilgrimage site in later centuries.\n\nThe caves are now protected by the Archaeological Survey of India and are among the most visited heritage sites in Maharashtra.",
+    "architecture": "The Buddhist caves include monasteries with multiple storeys and the chaitya hall of Cave 10, known for its ribbed ceiling carved in imitation of timber construction. The Hindu caves contain large sculptural panels depicting episodes involving Shiva, Vishnu and other deities.\n\nThe Kailasa temple was created by cutting downward and inward into the hillside, removing a very large volume of rock to leave a free-standing temple with a shrine, a pillared hall, a Nandi pavilion, gateways, courtyards and life-size elephant sculptures. It is designed to evoke Mount Kailash, the abode of Shiva, and shows Dravidian architectural features.\n\nThe Jain caves, including the Indra Sabha, are noted for their finely detailed carving. Traces of lime plaster and painting survive in parts of the complex.",
+    "significance": "Ellora is exceptional for bringing together monuments of three religious traditions at one site, illustrating religious coexistence in early medieval India. The Kailasa temple is regarded as one of the most remarkable feats of rock-cut architecture in the world.\n\nThe site is a major reference for the history of Indian sculpture and architecture between the sixth and tenth centuries.",
+    "known_conservation_issues": "The basalt rock is subject to weathering, and water seepage during the monsoon through joints and cracks has been documented as a cause of deterioration of sculptures and surviving plaster. Some sculptural panels show erosion, flaking and earlier damage.\n\nThe ASI has undertaken structural stabilisation, drainage improvements and chemical conservation at the site, including work on traces of painting in the Kailasa temple.\n\nHigh visitor numbers, especially at the Kailasa temple, raise concerns about wear, vandalism and crowding, and visitor management measures and facilities away from the caves have been introduced to reduce pressure.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North end – Jain caves"
+      },
+      {
+        "id": "east",
+        "label": "East elevation"
+      },
+      {
+        "id": "south",
+        "label": "South end – Buddhist caves"
+      },
+      {
+        "id": "west",
+        "label": "West elevation – cliff face of the cave fronts"
+      }
+    ]
+  },
+  {
+    "slug": "konark-sun-temple",
+    "name": "Konark Sun Temple",
+    "city": "Konark",
+    "state": "Odisha",
+    "lat": 19.8875,
+    "lon": 86.0947,
+    "wikipedia_title": "Konark Sun Temple",
+    "built_by": "King Narasimhadeva I of the Eastern Ganga dynasty",
+    "construction_period": "c. 1250 CE (13th century)",
+    "architectural_style": "Kalinga architecture (Odisha style of Nagara temple architecture)",
+    "materials": [
+      "Khondalite",
+      "Laterite",
+      "Chlorite",
+      "Iron (beams and clamps)"
+    ],
+    "unesco": "World Heritage Site, inscribed 1984 (as 'Sun Temple, Konârak')",
+    "tagline": "A thirteenth-century temple carved as the stone chariot of the Sun god",
+    "summary": "The Konark Sun Temple is a thirteenth-century temple on the coast of Odisha dedicated to Surya, the Sun god. Attributed to King Narasimhadeva I of the Eastern Ganga dynasty, it was designed as a colossal chariot with carved stone wheels drawn by horses. Its main tower has collapsed, but the surviving assembly hall and sculpture make it one of the outstanding monuments of Indian temple architecture.",
+    "history": "The temple was built around 1250 CE during the reign of Narasimhadeva I of the Eastern Ganga dynasty, which ruled the Kalinga region. It was dedicated to Surya and conceived as his celestial chariot.\n\nThe main sanctum tower (deula), which once rose high above the surviving hall, collapsed at some point in later centuries; the date and cause of the collapse are uncertain and remain debated. Over time the temple ceased to be used for worship and fell into ruin, and it was known to European sailors as the 'Black Pagoda'.\n\nIn the early twentieth century, in order to prevent the collapse of the surviving jagamohana (assembly hall), the British colonial administration had its interior filled with sand and its openings sealed, around 1903. Excavations and clearance of the surrounding area exposed further structures and sculptures.\n\nThe temple is now protected by the Archaeological Survey of India. It is depicted on the reverse of the Indian ten-rupee note issued from 2018.",
+    "architecture": "The temple is laid out as a giant chariot, with twenty-four elaborately carved stone wheels along the sides of its platform and sculpted horses at the front. The wheels are often interpreted as representing time, such as the months and divisions of the day.\n\nThe complex followed the Kalinga temple plan, with a tall curvilinear sanctum tower (rekha deula), now lost, and a pyramidal-roofed assembly hall (jagamohana, a pidha deula), which survives. A separate dance hall (natamandira) stands in front. The temple faces east so that the first rays of the rising sun would reach the sanctum.\n\nThe main structure is built of khondalite stone, with laterite used in the core and foundations and chlorite for some doorframes and sculptures. Iron beams and clamps were also used. The walls are covered with dense sculpture depicting deities, musicians, dancers, animals, scenes of daily life and erotic figures.",
+    "significance": "Konark is considered the culmination of Kalinga temple architecture and one of the greatest achievements of medieval Indian sculpture. Its chariot form is a unique and ambitious architectural concept.\n\nThe temple is a major symbol of Odisha's cultural heritage, and the annual Konark Dance Festival held against its backdrop reflects its continuing cultural importance.",
+    "known_conservation_issues": "The coastal location exposes the temple to salt-laden winds, high humidity and cyclones, which contribute to weathering of the khondalite stone, including surface erosion and loss of fine carving detail. Corrosion of embedded iron elements has also been noted as a concern.\n\nThe sand fill placed inside the jagamohana in the early twentieth century has long been debated, as it may have settled over time; the ASI, with technical institutions, has studied and begun work on the safe removal of the sand and structural strengthening of the hall.\n\nPast repairs, including some replacement and patching of stones, have been criticised as inconsistent with the original work. Growing tourism and development around the site also require management.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North side – chariot wheels and sculptured platform"
+      },
+      {
+        "id": "east",
+        "label": "East face – main entrance and natamandira, facing the rising sun"
+      },
+      {
+        "id": "south",
+        "label": "South side – chariot wheels and sculptured platform"
+      },
+      {
+        "id": "west",
+        "label": "West side – site of the collapsed main sanctum tower"
+      }
+    ]
+  },
+  {
+    "slug": "sanchi-stupa",
+    "name": "Sanchi Stupa",
+    "city": "Sanchi",
+    "state": "Madhya Pradesh",
+    "lat": 23.4792,
+    "lon": 77.7397,
+    "wikipedia_title": "Sanchi Stupa",
+    "built_by": "Originally commissioned by the Mauryan emperor Ashoka; enlarged and embellished under later patrons including the Shungas and Satavahanas",
+    "construction_period": "3rd century BCE – 1st century CE (with later additions to the 12th century)",
+    "architectural_style": "Early Buddhist architecture (stupa with carved toranas)",
+    "materials": [
+      "Sandstone",
+      "Brick (original core)"
+    ],
+    "unesco": "World Heritage Site, inscribed 1989 (as 'Buddhist Monuments at Sanchi')",
+    "tagline": "Ashoka's Great Stupa, ringed by gateways carved with the Buddha's story",
+    "summary": "The Great Stupa at Sanchi is one of the oldest stone structures in India and among the most important early Buddhist monuments. Originally built in brick by the Mauryan emperor Ashoka in the third century BCE, it was later enlarged with a stone casing and given four elaborately carved gateways. The Buddhist monuments at Sanchi were inscribed as a UNESCO World Heritage Site in 1989.",
+    "history": "The emperor Ashoka, who became a major patron of Buddhism, is credited with commissioning the original stupa at Sanchi in the third century BCE. This was a smaller brick structure, and an Ashokan pillar with an edict was erected nearby.\n\nIn the second century BCE, a period associated with the Shunga dynasty, the stupa was enlarged and encased in stone, and a stone railing and terraces were added. In the first century BCE to first century CE, the four great gateways (toranas) were added; an inscription on one gateway records a gift by an artisan associated with the Satavahana ruler.\n\nSanchi remained an active Buddhist centre for many centuries, with further stupas, temples and monasteries built on the hill into the medieval period. As Buddhism declined in India, the site was gradually abandoned.\n\nThe ruins were brought to wider attention by British officers in 1818. Early digging in the nineteenth century caused damage, but systematic restoration was carried out between 1912 and 1919 under John Marshall, Director-General of the Archaeological Survey of India. The site is now protected by the ASI.",
+    "architecture": "The Great Stupa (Stupa No. 1) is a large hemispherical dome (anda) on a raised base, topped by a square railing (harmika) and a triple umbrella (chhatra), symbolising the Buddha. A raised circular terrace and a ground-level path allowed devotees to perform circumambulation, enclosed by a plain stone railing.\n\nThe four toranas, one at each cardinal direction, are the stupa's most celebrated feature. Each consists of two square pillars supporting three curved architraves, covered with dense relief carving of Jataka tales, events from the Buddha's life and scenes of devotion. In keeping with early Buddhist practice, the Buddha is represented by symbols such as the Bodhi tree, footprints, an empty seat or a wheel rather than in human form. The gateways are carved in sandstone with techniques that recall carpentry and ivory work.",
+    "significance": "Sanchi is one of the best-preserved groups of early Buddhist monuments in India and documents the development of Buddhist art and architecture from the Mauryan period to the medieval era. The carved gateways are among the finest examples of early Indian relief sculpture.\n\nThe site is an important place of pilgrimage for Buddhists, and its imagery, including motifs associated with the Ashokan pillar, has had a lasting influence on Indian national symbolism.",
+    "known_conservation_issues": "Nineteenth-century amateur excavations and treasure-hunting caused significant damage to the stupas, and the later restoration under John Marshall involved reconstruction of collapsed elements; distinguishing original from restored fabric remains a consideration in conservation.\n\nThe sandstone carvings of the toranas are vulnerable to weathering from rain, temperature fluctuations, biological growth such as lichens and mosses, and surface erosion. The ASI carries out periodic chemical cleaning and preservation of the stone.\n\nIncreasing visitor numbers and development in the surrounding area are also management concerns for the hilltop site.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North face – northern torana (gateway)"
+      },
+      {
+        "id": "east",
+        "label": "East face – eastern torana (gateway)"
+      },
+      {
+        "id": "south",
+        "label": "South face – southern torana, near the Ashokan pillar"
+      },
+      {
+        "id": "west",
+        "label": "West face – western torana (gateway)"
+      }
+    ]
+  },
+  {
+    "slug": "brihadeeswara-temple",
+    "name": "Brihadeeswara Temple",
+    "city": "Thanjavur",
+    "state": "Tamil Nadu",
+    "lat": 10.7828,
+    "lon": 79.1317,
+    "wikipedia_title": "Brihadisvara Temple",
+    "built_by": "Chola emperor Rajaraja I",
+    "construction_period": "Completed 1010 CE",
+    "architectural_style": "Dravidian architecture (Chola)",
+    "materials": [
+      "Granite",
+      "Brick and lime stucco (later additions)",
+      "Mineral pigments (murals)"
+    ],
+    "unesco": "World Heritage Site, inscribed 1987 (as part of 'Great Living Chola Temples', extended 2004)",
+    "tagline": "Rajaraja Chola's granite temple, its vimana towering over Thanjavur since 1010",
+    "summary": "The Brihadeeswara Temple in Thanjavur is a Hindu temple dedicated to Shiva, built by the Chola emperor Rajaraja I and completed in 1010 CE. Constructed largely of granite, it is famous for its towering vimana over the sanctum. It is a living temple and forms part of the UNESCO World Heritage Site 'Great Living Chola Temples'.",
+    "history": "The temple was built by Rajaraja I, one of the most powerful rulers of the Chola dynasty, which dominated much of South India and extended its influence overseas in the tenth and eleventh centuries. Construction was completed in 1010 CE, and inscriptions on the temple walls record the king's donations, the temple's staff and its administration in considerable detail.\n\nThe temple served as a royal and religious centre of the Chola capital at Thanjavur. Later rulers of the region, including the Nayaks and the Marathas, added shrines, mandapas and gateways, and repainted parts of the interior.\n\nThe temple has remained in continuous worship. Its millennium was celebrated in 2010.\n\nIn 1987 the temple was inscribed as a UNESCO World Heritage Site; in 2004 the listing was extended to include the temples at Gangaikonda Cholapuram and Darasuram under the name 'Great Living Chola Temples'. The temple is protected by the Archaeological Survey of India, while religious affairs are administered separately.",
+    "architecture": "The temple stands within a large walled courtyard entered through gopurams on the east. The sanctum is crowned by a tall pyramidal vimana, around 60 metres high, rising in multiple tiers and topped by a large domed capstone (shikhara). At the time of its construction it was among the tallest temple towers in India.\n\nThe main structure is built of granite, a stone not quarried in the immediate vicinity of Thanjavur, reflecting the scale of resources the Chola state commanded. The sanctum houses a large lingam, and a circumambulatory passage around it contains Chola-period murals, parts of which were later overpainted in the Nayak period.\n\nA large monolithic Nandi (bull) faces the sanctum from a pavilion in the courtyard. The walls bear sculptures of deities and extensive inscriptions in Tamil, making the temple an important historical document as well as a work of architecture.",
+    "significance": "The Brihadeeswara Temple is considered a supreme achievement of Chola architecture and a landmark in the development of the Dravidian temple style. Its scale and engineering reflect the power and organisation of the Chola state.\n\nAs a living temple, it continues to be a major centre of worship and festivals, and its inscriptions and murals provide invaluable evidence of Chola society, administration and art.",
+    "known_conservation_issues": "The Chola murals in the circumambulatory passage were partly covered by later Nayak-period paintings; their study and conservation, including the delicate separation of painted layers, has been undertaken by the ASI and is a specialised and ongoing task. The paintings are sensitive to humidity, light and salts.\n\nVegetation growth on the vimana and walls, water seepage, and weathering of the stone and later stucco elements have been noted, and the ASI carries out periodic cleaning and maintenance, including before major consecration (kumbhabhishekam) ceremonies.\n\nAs a living temple with heavy footfall during festivals, it faces pressures from crowds, ritual use and the need to balance worship with conservation.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North side of the vimana"
+      },
+      {
+        "id": "east",
+        "label": "East face – entrance gopurams and Nandi pavilion"
+      },
+      {
+        "id": "south",
+        "label": "South side of the vimana"
+      },
+      {
+        "id": "west",
+        "label": "West side – rear of the sanctum"
+      }
+    ]
+  },
+  {
+    "slug": "fatehpur-sikri",
+    "name": "Fatehpur Sikri",
+    "city": "Fatehpur Sikri",
+    "state": "Uttar Pradesh",
+    "lat": 27.0944,
+    "lon": 77.6628,
+    "wikipedia_title": "Fatehpur Sikri",
+    "built_by": "Mughal emperor Akbar",
+    "construction_period": "c. 1571–1585",
+    "architectural_style": "Mughal architecture (blending Persian, Islamic and Indian traditions)",
+    "materials": [
+      "Red sandstone",
+      "White marble"
+    ],
+    "unesco": "World Heritage Site, inscribed 1986",
+    "tagline": "Akbar's short-lived red sandstone capital, frozen in time",
+    "summary": "Fatehpur Sikri is a city founded by the Mughal emperor Akbar in the late sixteenth century near Agra, which served as the Mughal capital for a little over a decade. Its red sandstone palaces, courts and the great Jama Masjid, with the Buland Darwaza gateway and the tomb of the Sufi saint Salim Chishti, survive in remarkably complete form. It was inscribed as a UNESCO World Heritage Site in 1986.",
+    "history": "The village of Sikri was the home of the Sufi saint Shaikh Salim Chishti. According to well-known accounts, Akbar visited the saint to seek blessings for a son, and the subsequent birth of his son Salim, the future emperor Jahangir, led Akbar to honour the site.\n\nAkbar began building a new city here around 1571, and it served as the Mughal capital from the early 1570s until about 1585. The name Fatehpur ('City of Victory') is associated with Akbar's victorious campaign in Gujarat in the 1570s.\n\nThe city was a centre of court life, administration and intellectual activity. Akbar's discussions with scholars of different religions were held in the Ibadat Khana here.\n\nAround 1585 Akbar moved his court to Lahore, and the city was soon largely abandoned. Reasons often suggested include problems with water supply and the shifting political and military needs of the empire. The city's buildings are now protected by the Archaeological Survey of India.",
+    "architecture": "The city was built on a rocky ridge and enclosed by walls on three sides, with an artificial lake on the other. The imperial complex includes the Diwan-i-Aam (Hall of Public Audience), the Diwan-i-Khas (Hall of Private Audience) with its celebrated central carved pillar, the five-storeyed Panch Mahal, palaces associated with members of the royal household, and various courtyards and pools.\n\nThe Jama Masjid is one of the largest mosques in India. Its southern entrance, the Buland Darwaza, is a monumental gateway reached by a high flight of steps. In the mosque's courtyard stands the tomb of Shaikh Salim Chishti, notable for its white marble and finely carved marble screens (jalis).\n\nThe buildings are constructed mainly of the local red sandstone, and many use trabeate (post-and-beam) construction, brackets and chhatris drawn from Indian building traditions, combined with Persian and Islamic forms.",
+    "significance": "Fatehpur Sikri is an outstanding example of a planned Mughal imperial city and preserves a remarkably complete ensemble of sixteenth-century palace, civic and religious buildings. It illustrates the synthesis of architectural traditions encouraged under Akbar.\n\nThe tomb of Salim Chishti remains an active place of pilgrimage, and the site is one of the most visited heritage destinations near Agra.",
+    "known_conservation_issues": "The red sandstone is subject to weathering, including surface erosion, flaking and salt damage, and fine carvings and inscriptions are particularly vulnerable. Fatehpur Sikri lies within the Taj Trapezium Zone, where controls on pollution apply.\n\nParts of the city walls and peripheral structures have suffered collapse or deterioration, and archaeological remains extend beyond the main monuments into areas subject to settlement and development pressure.\n\nTourism pressure, including crowding, unregulated guides and vendors and the needs of pilgrims at the dargah, has been identified as a management challenge.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North elevation"
+      },
+      {
+        "id": "east",
+        "label": "East elevation"
+      },
+      {
+        "id": "south",
+        "label": "South face – Buland Darwaza and its steps"
+      },
+      {
+        "id": "west",
+        "label": "West elevation"
+      }
+    ]
+  },
+  {
+    "slug": "meenakshi-amman-temple",
+    "name": "Meenakshi Amman Temple",
+    "city": "Madurai",
+    "state": "Tamil Nadu",
+    "lat": 9.9197,
+    "lon": 78.1194,
+    "wikipedia_title": "Meenakshi Temple",
+    "built_by": "Ancient foundation; largely rebuilt and expanded by the Madurai Nayak rulers",
+    "construction_period": "Present structures mostly 16th–17th century, on an older site",
+    "architectural_style": "Dravidian architecture (Nayak period)",
+    "materials": [
+      "Granite",
+      "Brick",
+      "Lime stucco",
+      "Paint"
+    ],
+    "unesco": "Not inscribed",
+    "tagline": "Madurai's living temple city, crowned by colourful sculpted gopurams",
+    "summary": "The Meenakshi Amman Temple is a major Hindu temple in the centre of Madurai dedicated to the goddess Meenakshi, a form of Parvati, and her consort Sundareswarar, a form of Shiva. The site has ancient religious associations, but most of the present complex was built by the Nayak rulers of Madurai in the sixteenth and seventeenth centuries. It is famous for its many tall gopurams covered with brightly painted stucco figures.",
+    "history": "Madurai is one of the oldest cities in South India, and a temple to the goddess at its heart is associated with early Tamil literary traditions. The city was the capital of the Pandya dynasty for long periods.\n\nAccording to historical accounts, the temple suffered damage during the invasions of Madurai by armies of the Delhi Sultanate in the early fourteenth century.\n\nThe temple was extensively rebuilt and enlarged after Madurai came under the Vijayanagara Empire and then the Madurai Nayaks in the sixteenth century. Rulers such as Vishwanatha Nayak and especially Thirumalai Nayak in the seventeenth century undertook major construction, giving the complex much of its present form.\n\nThe temple has remained an active centre of worship throughout. It is administered by the Hindu Religious and Charitable Endowments Department of the Tamil Nadu government, and its annual festival celebrating the marriage of Meenakshi and Sundareswarar (Chithirai Thiruvizha) draws very large crowds.",
+    "architecture": "The temple complex is enclosed by high walls and entered through gopurams, with tall towers at the four cardinal directions; the southern gopuram is generally described as the tallest, at around 50 metres. In total the complex has more than a dozen gopurams, each covered with thousands of painted stucco figures of deities, mythological beings and animals.\n\nThe twin main shrines of Meenakshi and Sundareswarar stand within concentric enclosures. Notable features include the Golden Lotus Tank (Potramarai Kulam), long pillared corridors, and the Thousand Pillar Hall (Ayiram Kaal Mandapam), whose pillars bear sculptures. The structures are built mainly of granite, with the upper tiers of the gopurams in brick and lime stucco.",
+    "significance": "The Meenakshi Temple is one of the most important centres of Hindu worship in Tamil Nadu and a defining landmark of Madurai, whose old city developed in concentric streets around it. It is a celebrated example of Nayak-period Dravidian architecture and sculpture.\n\nThe temple is a focus of Tamil religious and cultural life, festivals, music and literature, and attracts very large numbers of pilgrims and visitors.",
+    "known_conservation_issues": "In February 2018 a fire broke out in shops near the eastern entrance and damaged the Veera Vasantharaya Mandapam, causing structural damage to the pillared hall. In the aftermath, shops operating inside the temple premises were removed, and restoration of the hall was taken up.\n\nThe painted stucco figures of the gopurams are periodically repaired and repainted during renovation and consecration (kumbhabhishekam) cycles, and heritage experts have raised concerns about the methods and materials used in some renovation work.\n\nAs a living temple with very large daily crowds and festival gatherings, it faces pressures from footfall, ritual use, commercial activity in the surroundings and the need for fire safety and crowd management.",
+    "facades": [
+      {
+        "id": "north",
+        "label": "North gopuram"
+      },
+      {
+        "id": "east",
+        "label": "East gopuram – principal entrance"
+      },
+      {
+        "id": "south",
+        "label": "South gopuram – the tallest tower"
+      },
+      {
+        "id": "west",
+        "label": "West gopuram"
+      }
+    ]
+  }
+]

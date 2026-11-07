@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/secrets.toml
+# regenerated at runtime
+data/chroma/
+data/uploads/
+data/results/
+reports/*.pdf
+# trained weights are added separately (see models/weights/README.md)
+models/weights/*.pt

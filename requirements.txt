@@ -1,0 +1,26 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit>=1.40
+plotly>=5.20
+pandas>=2.0
+pillow>=10.0
+numpy>=1.26
+requests>=2.31
+python-dotenv>=1.0
+SQLAlchemy>=2.0
+# AI / CV
+ultralytics>=8.3.200   # YOLO26 support
+torch==2.5.1+cpu        # CPU build keeps cloud installs small
+torchvision==0.20.1+cpu
+opencv-python-headless>=4.9
+# Gemini + RAG
+google-genai>=1.0
+langchain-core>=0.3
+langchain-chroma>=0.2
+langchain-huggingface>=0.1
+langchain-text-splitters>=0.3
+chromadb>=0.5
+sentence-transformers>=3.0
+# Reports
+reportlab>=4.0
+# 3D model generation (scripts/build_models.py)
+trimesh>=4.0
