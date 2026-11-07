@@ -1,0 +1,13 @@
+{
+  "north_deg": 0,
+  "frame": {
+    "w": 1.0,
+    "h": 1.0
+  },
+  "source": "parametric",
+  "view": [
+    0.15,
+    0.75,
+    0.75
+  ]
+}
