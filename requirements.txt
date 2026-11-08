@@ -9,8 +9,8 @@ python-dotenv>=1.0
 SQLAlchemy>=2.0
 # AI / CV
 ultralytics>=8.3.200   # YOLO26 support
-torch==2.5.1+cpu        # CPU build keeps cloud installs small
-torchvision==0.20.1+cpu
+torch                   # CPU build comes from the extra index above (no CUDA download)
+torchvision
 opencv-python-headless>=4.9
 # Gemini + RAG
 google-genai>=1.0
