@@ -330,7 +330,9 @@ def _explanations(m: Monument, run: dict | None) -> None:
             tag = ('<span class="tag-ai">AI-generated hypothesis · ' + esc(r["model"]) + "</span>") if r["source"] != "reference" \
                 else '<span class="tag-ref">General reference · Gemini unavailable</span>'
             md(f'<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px">'
-               f'<div class="kicker"><span class="dot" style="background:{dmg_color(label)}"></span> {n} detection(s) · max {best:.0%}</div>{tag}</div>'
+               f'<div class="kicker"><span class="dot" style="background:{dmg_color(label)}"></span> {n} '
+               + (f'hand annotation(s)' if annotation.is_reference(run) else f'detection(s) · max {best:.0%}')
+               + f'</div>{tag}</div>'
                f'<h3>{esc(label)}</h3></div>')
             st.markdown(r["text"])
     md('<div class="imgmeta">These are <b>possible</b> causes, not expert-confirmed findings. Refer active structural issues to qualified conservators / ASI.</div>')

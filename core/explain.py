@@ -20,9 +20,9 @@ Monument facts (from the project knowledge base):
 - Materials: {materials}
 - Documented conservation issues: {issues}
 
-Detection summary from the stored monitoring record:
+Summary from the stored monitoring record:
 - Category: {label}
-- Number of boxes: {count}; highest confidence: {conf:.0%}; image type: {kind}; image date: {date}
+- Number of boxes: {count}; {conf_note}; image type: {kind}; image date: {date}
 
 Write in plain English, using markdown with these exact headings:
 ### What this category means
@@ -48,7 +48,9 @@ def explain(m: Monument, label: str, count: int, conf: float, kind: str, date: s
         text, model = llm.generate(PROMPT.format(
             name=m.name, location=m.location, materials=", ".join(m.materials) or "not recorded",
             issues=(m.known_conservation_issues or "not recorded")[:1200], label=label, count=count,
-            conf=conf, kind=kind, date=date))
+            conf_note=("marked by hand, so no detector confidence exists" if conf <= 0
+                       else f"highest detector confidence: {conf:.0%}"),
+            kind=kind, date=date))
         db.save_explanation(m.slug, label, text, model)
         return {"text": text, "source": "gemini", "model": model}
     except llm.LLMUnavailable as e:
