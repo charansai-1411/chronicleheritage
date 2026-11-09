@@ -15,7 +15,8 @@ import streamlit as st
 from PIL import Image
 
 from config import settings
-from core import acquisition, compare, database as db, detection, explain, rag, reports, viewer3d
+from core import (acquisition, annotation, compare, database as db, detection, explain, rag,
+                  reports, viewer3d)
 from core.damage_reference import DAMAGE, color as dmg_color
 from core.monuments import Monument, condition_of
 from ui.components import (before_after, cover_url, credit_line, empty, esc, masthead, md, section, status_pill)
@@ -152,12 +153,12 @@ def _imagery(m: Monument, images: list) -> None:
 
 # =============================================================== §03
 def _detection(m: Monument, images: list) -> None:
-    section("03", "AI damage detection", "YOLO26l · 7 classes · trained on 6,317 heritage images (5,097 train / 972 val / 248 test).", "detection")
-    if not settings.weights_available():
-        empty("Integration point", "Trained YOLO26l weights are not installed",
-              f"Copy your trained <code>best.pt</code> to <code>models/weights/yolo26l_heritage.pt</code> "
-              f"(or set <code>YOLO_WEIGHTS</code> in <code>.env</code>) and reload. Detection is disabled until then — "
-              "ChronicleHeritage never shows placeholder predictions.")
+    trained = settings.weights_available()
+    section("03", "AI damage detection",
+            "YOLO26l · 7 classes." if trained else "Detector not yet trained — showing hand-marked reference annotations.",
+            "detection")
+    if not trained:
+        _reference_panel(m)
         _history(m)
         return
     if not images:
@@ -197,6 +198,9 @@ def _detection(m: Monument, images: list) -> None:
             except Exception as e:
                 st.error(f"Inference failed: {e}")
     run = db.latest_run(m.slug)
+    if annotation.is_reference(run):
+        md('<span class="tag-hand">Hand annotation</span> <span class="imgmeta">The newest record for this '
+           'monument is a hand-marked reference sample, not a detection. Run the model above to replace it.</span>')
     if run:
         c1, c2 = st.columns([1.5, 1], gap="large")
         with c1:
@@ -219,6 +223,44 @@ def _detection(m: Monument, images: list) -> None:
     _history(m)
 
 
+def _reference_panel(m: Monument) -> None:
+    """Shown while the detector has no weights: hand annotations, labelled as such."""
+    md('<div class="callout-warn"><b>The damage detector is not trained yet.</b> '
+       'Nothing on this page is a model prediction. So that the rest of the pipeline can still be '
+       'followed end to end, the team has marked damage <b>by eye</b> on real photographs; those marks '
+       'are what §04 places on the 3D model, what §05 explains and what §08 reports, and every one of '
+       'those sections says so. Install the trained weights at '
+       '<code>models/weights/yolo26l_heritage.pt</code> and this section becomes real inference.</div>')
+    run = db.latest_run(m.slug)
+    if not annotation.is_reference(run):
+        done = ", ".join(sorted({s["monument"] for s in annotation.load_specs()})) or "none yet"
+        empty("No reference sample", f"No hand annotations for {m.name}",
+              f"Reference samples exist for: <code>{esc(done)}</code>. Add more in "
+              f"<code>data/annotations.json</code> and run <code>python scripts/seed_annotations.py</code>.")
+        return
+    c1, c2 = st.columns([1.5, 1], gap="large")
+    with c1:
+        if run["annotated_path"] and Path(run["annotated_path"]).exists():
+            st.image(run["annotated_path"], use_container_width=True,
+                     caption=f"Hand-annotated reference · {esc(annotation.spec_note(m.slug))}")
+    with c2:
+        dets = run["detections"]
+        notes = annotation.notes_for(m.slug)
+        cnt = Counter(d["label"] for d in dets)
+        md(f'<div class="kicker">Hand annotations · {len(dets)} marked</div>')
+        md('<div class="count-row" style="margin:10px 0 16px">' + "".join(
+            f'<span class="cc"><span class="dot" style="background:{DAMAGE[k]["color"]}"></span>{esc(k)}<span class="n">{cnt.get(k, 0)}</span></span>'
+            for k in DAMAGE) + "</div>")
+        st.dataframe(pd.DataFrame([{"#": i, "Category": d["label"],
+                                    "What was marked": notes[i - 1] if i <= len(notes) else "",
+                                    "Centre (u, v)": f"{d['u']:.2f}, {d['v']:.2f}"}
+                                   for i, d in enumerate(dets, 1)]),
+                     hide_index=True, use_container_width=True)
+        md(f'<div class="imgmeta">{esc(annotation.SHORT_NOTICE)} There is no confidence score for a '
+           'hand mark, so none is shown. When the detector is trained, run it on this same image and '
+           'compare — these boxes are the check, not the answer.</div>')
+
+
 def _history(m: Monument) -> None:
     runs = db.runs_for(m.slug)
     if runs:
@@ -226,7 +268,9 @@ def _history(m: Monument) -> None:
             st.dataframe(pd.DataFrame([{
                 "Run": r["id"], "Run at (UTC)": f"{r['created_at']:%d %b %Y %H:%M}", "Image": r["image"]["kind"],
                 "Image acquired": r["image"]["acquired_on"].strftime("%d %b %Y") if r["image"]["acquired_on"] else "unknown",
-                "Detections": len(r["detections"]), "Facade": r["facade"], "Weights": r["weights_sha"]} for r in runs]),
+                "Detections": len(r["detections"]), "Facade": r["facade"],
+                "Produced by": "hand annotation" if annotation.is_reference(r) else f"model · {r['weights_sha']}"}
+                for r in runs]),
                 hide_index=True, use_container_width=True)
 
 
@@ -249,8 +293,13 @@ def _twin(m: Monument, run: dict | None) -> None:
             if c:
                 notes[lbl] = esc(c.text[:420]).replace("\n", "<br>")
     viewer3d.render(m, dets, height=640, ai_notes=notes)
-    msg = (f"Showing {len(dets)} marker(s) from run #{run['id']} ({run['facade']} facade)." if run
-           else "No detection run stored yet — the twin shows the model without damage markers.")
+    if annotation.is_reference(run):
+        msg = (f"Showing {len(dets)} marker(s) from <b>hand annotations</b>, not from the detector — "
+               f"{esc(annotation.SHORT_NOTICE)}")
+    elif run:
+        msg = f"Showing {len(dets)} marker(s) from run #{run['id']} ({run['facade']} facade)."
+    else:
+        msg = "No detection run stored yet — the twin shows the model without damage markers."
     md(f'<div class="imgmeta">{msg} Marker positions are <b>approximate</b>: each 2D box centre is projected onto the model '
        f'from the facade the image shows (manual spatial correspondence), not reconstructed by photogrammetry.</div>')
 
@@ -262,6 +311,11 @@ def _explanations(m: Monument, run: dict | None) -> None:
         empty("Waiting on detections", "Nothing to explain yet",
               "Explanations are generated only for damage the model actually detected and stored.")
         return
+    if annotation.is_reference(run):
+        md('<span class="tag-hand">Hand-annotated input</span> <span class="imgmeta">These explanations '
+           'are grounded in the categories marked by eye in §03, not in detector output. The reasoning '
+           'about materials and causes is unaffected; the evidence it starts from is a human reading '
+           'of the photograph.</span>')
     dets = run["detections"]
     cnt = Counter(d["label"] for d in dets)
     when = run["image"]["acquired_on"]

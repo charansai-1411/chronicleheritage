@@ -48,7 +48,28 @@ this rebuild. You can copy them into the "Work carried out for the week" box.
    pipeline and the explanation fallback.
 4. Extended the tested Charminar page to all 14 monuments and wrote the README and setup instructions.
 
+## Week 11 – Deployment, training pipeline and an honest stand-in for the detector
+1. Deployed the application to Google Cloud Run (`asia-south1`) behind a public URL; made every
+   stored file path project-relative so the database is portable between machines and the container.
+2. Fixed a `KeyError` raised when weights name their classes `0`–`6`: class labels are now
+   normalised at a single point (`core/damage_reference.canonical`) and on every database read,
+   so neither the UI nor the statistics can crash on an unrecognised label.
+3. Wrote the training pipeline: `scripts/train.py` for a local dataset (it inspects class balance
+   and writes `data.yaml` in the app's own class order, so the trained model carries real names),
+   and `scripts/kaggle_train.py`, which streams the openly-licensed CiF defect dataset on Kaggle
+   and fine-tunes YOLO26l unattended.
+4. The dataset work is not finished and the detector therefore does not exist yet. Rather than
+   show invented predictions, the team marked damage **by eye** on four real photographs
+   (Golconda Fort, Ellora, Qutb Shahi Tombs, Charminar — 19 boxes across six of the seven classes)
+   and stored them as hand annotations. They let sections 04, 05 and 08 be demonstrated end to end,
+   they are labelled as hand annotations in the UI, in the PDF and in the image itself, and they
+   become the detector's first check once it is trained.
+
 ## Pending (next weeks)
-* Copy the final trained YOLO26l `best.pt` to `models/weights/yolo26l_heritage.pt` and report mAP on the 248-image test set.
+* Train the detector (Kaggle/Colab were both unavailable at the time of writing) and copy the final
+  `best.pt` to `models/weights/yolo26l_heritage.pt`; report per-class mAP, then re-run it on the four
+  hand-annotated photographs and compare its boxes with the hand marks.
+* Two classes — **Plant** and **Surface Dissolution** — have no training data in the open CiF dataset.
+  Either obtain MSD-Det or label them ourselves before claiming all seven classes.
 * Replace the parametric models with COLMAP/photogrammetry reconstructions where field photos allow (pilot: Charminar).
 * Optionally, register photos to the 3D models with COLMAP camera poses, to place markers precisely.

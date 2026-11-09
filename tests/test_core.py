@@ -118,3 +118,35 @@ def test_stored_numeric_labels_are_normalised_on_read():
     assert run["detections"][0]["label"] == "Surface Dissolution"
     assert run["detections"][0]["raw_label"] == "6"          # the row itself is untouched
     assert "6" not in db.global_stats()["by_class"]
+
+
+def test_hand_annotations_are_valid_and_clearly_marked():
+    """The reference annotations stand in for the detector, so they must be well-formed
+    and must never be mistakable for model output."""
+    from core import annotation
+    specs = annotation.load_specs()
+    assert specs, "data/annotations.json has no annotations"
+    for spec in specs:
+        assert by_slug(spec["monument"]), spec["monument"]
+        assert (settings.ROOT / spec["image"]).exists(), spec["image"]
+        assert spec["boxes"], spec["monument"]
+        for b in spec["boxes"]:
+            assert b["label"] in settings.DAMAGE_CLASSES, b["label"]
+            x1, y1, x2, y2 = b["box"]
+            assert 0 <= x1 < x2 <= 1 and 0 <= y1 < y2 <= 1, b
+            assert b.get("note"), "every hand annotation says what was marked"
+    assert "NOT MODEL OUTPUT" in annotation.BANNER
+    assert annotation.is_reference({"is_demo": True})
+    assert annotation.is_reference({"model": annotation.REFERENCE_MODEL})
+    assert not annotation.is_reference({"is_demo": False, "model": "YOLO26l"})
+    assert not annotation.is_reference(None)
+
+
+def test_real_runs_are_never_flagged_as_reference():
+    img = db.add_image(monument_slug="sanchi-stupa", kind="ground", source="test", path="x.jpg")
+    rid = db.save_run(img.id, "sanchi-stupa", "YOLO26l", "abc", 0.25, "south", "",
+                      [{"label": "Crack", "confidence": 0.9, "box": [0, 0, 5, 5], "u": .2, "v": .3}])
+    run = next(r for r in db.runs_for("sanchi-stupa") if r["id"] == rid)
+    from core import annotation
+    assert run["is_demo"] is False and not annotation.is_reference(run)
+    assert db.global_stats()["reference_detections"] == 0

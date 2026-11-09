@@ -8,6 +8,8 @@ __pycache__/
 data/chroma/
 data/uploads/
 data/results/
+# ...except the hand-annotated reference images, which the deployed app must show
+!data/results/*/reference_*.jpg
 reports/*.pdf
 # trained weights are added separately (see models/weights/README.md)
 models/weights/*.pt

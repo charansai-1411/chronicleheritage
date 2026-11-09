@@ -1,0 +1,65 @@
+{
+  "_about": [
+    "Hand-marked reference annotations, used while the YOLO26l weights are still being trained.",
+    "These are NOT model predictions. Every box here was marked by the project team by eye on the",
+    "real photograph named in `image`, and the app labels them 'hand annotation' everywhere they",
+    "appear (section 03, the 3D twin, the PDF report and the dashboard). They exist so the rest of",
+    "the pipeline - 3D placement, Gemini explanation, reporting - can be demonstrated end to end",
+    "before the detector exists. Delete this file (and re-run scripts/seed_annotations.py --clear)",
+    "once real detection runs are available.",
+    "Boxes are normalised to the image: x1, y1, x2, y2 in 0..1, origin top-left."
+  ],
+  "annotations": [
+    {
+      "monument": "golconda-fort",
+      "image": "data/images/golconda-fort/commons_cd434460a017.jpg",
+      "facade": "south",
+      "note": "Ruined curtain wall with plastered niches. Marked by eye from the photograph.",
+      "boxes": [
+        {"label": "Fabric Loss of Masonry Units", "box": [0.422, 0.466, 0.570, 0.597], "note": "Plaster and facing lost from the central niche, exposing the rubble core"},
+        {"label": "Fabric Loss of Masonry Units", "box": [0.416, 0.692, 0.524, 0.769], "note": "Second loss patch below the niche sill, stones visible"},
+        {"label": "Moss", "box": [0.102, 0.669, 0.338, 0.814], "note": "Dark biological growth across the damp lower wall"},
+        {"label": "Moss", "box": [0.627, 0.208, 0.723, 0.316], "note": "Growth following a rainwater run-off path"},
+        {"label": "Plant", "box": [0.796, 0.366, 0.862, 0.407], "note": "Woody seedling rooted in the right-hand niche"},
+        {"label": "Plant", "box": [0.892, 0.814, 0.989, 0.859], "note": "Vegetation at the wall base"},
+        {"label": "Crack", "box": [0.633, 0.312, 0.681, 0.434], "note": "Vertical fissure beside the niche arch"}
+      ]
+    },
+    {
+      "monument": "qutb-shahi-tombs",
+      "image": "data/images/qutb-shahi-tombs/commons_2fd157f7ff9e.jpg",
+      "facade": "east",
+      "note": "Minarets and parapet of a tomb. Marked by eye from the photograph.",
+      "boxes": [
+        {"label": "Discolouration", "box": [0.296, 0.166, 0.488, 0.269], "note": "Blackened soiling crust over the upper dome"},
+        {"label": "Discolouration", "box": [0.571, 0.437, 0.704, 0.508], "note": "Same crust on the second minaret dome"},
+        {"label": "Discolouration", "box": [0.0, 0.654, 0.268, 0.714], "note": "Dark band sheltered beneath the cornice"},
+        {"label": "Surface Dissolution", "box": [0.013, 0.813, 0.268, 0.977], "note": "Lime render washed back to an open, pitted surface"}
+      ]
+    },
+    {
+      "monument": "ellora-caves",
+      "image": "data/images/ellora-caves/commons_3d0e0a4fbf66.jpg",
+      "facade": "north",
+      "note": "Rock-cut relief figure inside a cave. Marked by eye from the photograph.",
+      "boxes": [
+        {"label": "Fabric Loss of Masonry Units", "box": [0.609, 0.278, 0.732, 0.362], "note": "Fresh-looking stone loss beside the raised arm"},
+        {"label": "Fabric Loss of Masonry Units", "box": [0.313, 0.312, 0.422, 0.380], "note": "Spalled patch on the torso"},
+        {"label": "Fabric Loss of Masonry Units", "box": [0.561, 0.565, 0.669, 0.633], "note": "Loss along the lower drapery"},
+        {"label": "Fabric Loss of Masonry Units", "box": [0.0, 0.506, 0.078, 0.579], "note": "Loss on the subsidiary relief at the left edge"},
+        {"label": "Crack", "box": [0.374, 0.787, 0.488, 0.864], "note": "Diagonal fissure running through the lower panel"}
+      ]
+    },
+    {
+      "monument": "charminar",
+      "image": "data/images/charminar/commons_2aebe809e9f5.jpg",
+      "facade": "north",
+      "note": "North elevation from the plaza. Marked by eye from the photograph.",
+      "boxes": [
+        {"label": "Discolouration", "box": [0.335, 0.572, 0.422, 0.644], "note": "Grey weathering stain on the left arch spandrel"},
+        {"label": "Discolouration", "box": [0.536, 0.572, 0.621, 0.633], "note": "Matching stain on the right spandrel"},
+        {"label": "Discolouration", "box": [0.687, 0.631, 0.762, 0.705], "note": "Run-off streaking below the balcony"}
+      ]
+    }
+  ]
+}

@@ -35,6 +35,14 @@ a{color:var(--ink)}
   background:#F5F1E8;color:#7A5C2E;border:1px solid #E6DCC6}
 .tag-warn{display:inline-block;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:6px;
   background:#FFF4E5;color:#8A5300;border:1px solid #F3D9B1}
+.tag-hand{display:inline-block;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:6px;
+  background:#FBECEA;color:#8E2F22;border:1px solid #EFCCC6}
+
+/* a statement the reader must not skim past — used where hand annotations stand in for the model */
+.callout-warn{border:1px solid #EFCCC6;border-left:3px solid var(--alert);background:#FDF6F4;color:var(--ink);
+  border-radius:12px;padding:14px 16px;font-size:13.5px;line-height:1.62;margin:4px 0 18px}
+.callout-warn b{font-weight:600}
+.callout-warn code{font:500 12px var(--mono);background:#FFF;border:1px solid var(--line);border-radius:5px;padding:1px 5px}
 
 /* ---------- masthead ---------- */
 .mast{display:flex;justify-content:space-between;align-items:center;padding:22px 0 18px;border-bottom:1px solid var(--line)}

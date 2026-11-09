@@ -44,24 +44,37 @@ def render() -> None:
     md(f"""<div class="hero"><div>
       <div class="kicker">AI heritage monitoring · digital twins · threat assessment</div>
       <h1>Watching India's monuments <i>age</i>, one image at a time.</h1>
-      <p class="lede">ChronicleHeritage gathers dated satellite and ground imagery of fourteen monuments, detects seven
-      kinds of masonry damage with a trained YOLO26l model, pins every finding onto a 3D digital twin and explains
-      possible causes — always marking what is AI hypothesis and what is record.</p></div>
+      <p class="lede">ChronicleHeritage gathers dated satellite and ground imagery of fourteen monuments, reads seven
+      kinds of masonry damage with a YOLO26l detector, pins every finding onto a 3D digital twin and explains
+      possible causes — always marking what is AI hypothesis, what is record and what is still a human judgement.</p></div>
       <div class="hero-media">{hero_img}</div></div>""")
 
     by_class = stats["by_class"]
     top_cls = max(by_class, key=by_class.get) if by_class else None
+    n_ref, n_mod = stats.get("reference_detections", 0), stats.get("model_detections", 0)
+    if not settings.weights_available():
+        md('<div class="callout-warn"><b>Detector status — the YOLO26l weights are not installed.</b> '
+           'Everything else on this site runs for real: the imagery and its capture dates, the 3D models, the '
+           'image comparison, the Gemini text and the reports. The damage findings shown below were marked '
+           '<b>by eye</b> on real photographs so the pipeline can be followed end to end, and they are labelled '
+           'as hand annotations wherever they appear. No prediction on this site came from a model.</div>')
+    findings_note = (f"{n_mod} from the model · {n_ref} hand-marked" if n_ref and n_mod
+                     else f"all {n_ref} hand-marked, detector not trained yet" if n_ref
+                     else f"across {stats['runs']} model run{'s' if stats['runs'] != 1 else ''}")
     md(f"""<div class="ledger">
       <div class="cell"><div class="v">{len(mons)}</div><div class="kicker l">Monuments monitored</div><div class="s">{scanned} scanned at least once</div></div>
-      <div class="cell"><div class="v">{stats['detections']}</div><div class="kicker l">Damage detections</div><div class="s">across {stats['runs']} model run{'s' if stats['runs'] != 1 else ''}</div></div>
+      <div class="cell"><div class="v">{stats['detections']}</div><div class="kicker l">Damage findings</div><div class="s">{findings_note}</div></div>
       <div class="cell"><div class="v">{len(by_class)}<small>/ 7</small></div><div class="kicker l">Damage categories seen</div><div class="s">{esc(top_cls + ' most frequent') if top_cls else 'none recorded yet'}</div></div>
       <div class="cell"><div class="v">{len(attention)}</div><div class="kicker l">Need attention</div><div class="s">{esc(', '.join(m.name for m in attention[:2])) or 'no structural flags'}</div></div>
       <div class="cell"><div class="v">{stats['images']}</div><div class="kicker l">Dated images on record</div><div class="s">satellite · ground · drone</div></div>
     </div>""")
 
     # ------------------------------------------------------------- analytics
-    section("01", "Condition overview", "Status comes from each monument's latest stored detection run — "
-            "confidence measures detector certainty, not severity.", "overview")
+    section("01", "Condition overview",
+            "Status comes from each monument's latest stored record — the damage categories present, not a severity score."
+            if n_ref and not n_mod else
+            "Status comes from each monument's latest stored detection run — confidence measures detector certainty, "
+            "not severity.", "overview")
     c1, c2 = st.columns([1.15, 1], gap="large")
     with c1:
         md('<div class="kicker" style="margin-bottom:8px">Damage distribution · all stored detections</div>')
@@ -78,6 +91,10 @@ def render() -> None:
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
         if not stats["detections"]:
             md('<div class="imgmeta">No detections are stored yet — bars will fill as YOLO26l runs are saved.</div>')
+        elif n_ref and not n_mod:
+            md('<div class="imgmeta"><span class="tag-hand">Hand annotation</span> &nbsp;Every bar above comes from '
+               'damage marked <b>by eye</b> on real photographs while the detector is being trained — no model '
+               'produced these. They will be replaced by real runs once the weights are installed.</div>')
     with c2:
         md('<div class="kicker" style="margin-bottom:8px">Monument status matrix</div>')
         cells = []
@@ -93,7 +110,9 @@ def render() -> None:
 
     # ------------------------------------------------------------- activity
     section("02", "Recent monitoring activity", "Latest model runs and image acquisitions, newest first.", "activity")
-    events = ([("run", r["at"], r["slug"], f"YOLO26l run · {r['count']} detection{'s' if r['count'] != 1 else ''} on {r['kind']} image")
+    events = ([("run", r["at"], r["slug"],
+                (("Hand annotation · " if r.get("is_demo") else "YOLO26l run · ")
+                 + f"{r['count']} finding{'s' if r['count'] != 1 else ''} on {r['kind']} image"))
                for r in stats["recent_runs"]] +
               [("img", i["at"], i["slug"], f"{i['kind'].title()} image acquired · {i['source']}") for i in stats["recent_images"]])
     events.sort(key=lambda e: e[1], reverse=True)

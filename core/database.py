@@ -184,11 +184,13 @@ def get_image(image_id: int) -> ImageRecord | None:
 
 # ---------------------------------------------------------------- detections
 def save_run(image_id: int, slug: str, model_name: str, weights_sha: str, conf: float,
-             facade: str, annotated_path: str, dets: list[dict]) -> int:
+             facade: str, annotated_path: str, dets: list[dict], is_demo: bool = False) -> int:
+    """Store one run. `is_demo` is True only for hand annotations (core/annotation.py);
+    real inference always writes it False, so the two can never be confused on read."""
     with session() as s:
         run = DetectionRun(image_id=image_id, monument_slug=slug, model_name=model_name,
                            weights_sha=weights_sha, conf_threshold=conf, facade=facade,
-                           annotated_path=annotated_path)
+                           annotated_path=annotated_path, is_demo=is_demo)
         run.detections = [Detection(monument_slug=slug, label=d["label"], confidence=d["confidence"],
                                     x1=d["box"][0], y1=d["box"][1], x2=d["box"][2], y2=d["box"][3],
                                     u=d["u"], v=d["v"]) for d in dets]
@@ -256,6 +258,10 @@ def global_stats() -> dict:
         n_images = s.scalar(select(func.count(ImageRecord.id))) or 0
         n_runs = s.scalar(select(func.count(DetectionRun.id))) or 0
         n_dets = s.scalar(select(func.count(Detection.id))) or 0
+        # how much of the above is hand-annotated reference material rather than inference
+        ref_runs = s.scalar(select(func.count(DetectionRun.id)).where(DetectionRun.is_demo.is_(True))) or 0
+        ref_dets = s.scalar(select(func.count(Detection.id)).join(DetectionRun)
+                            .where(DetectionRun.is_demo.is_(True))) or 0
         by_class: dict[str, int] = {}
         for lbl, n in s.execute(select(Detection.label, func.count(Detection.id)).group_by(Detection.label)).all():
             key = canonical(lbl)                      # merge raw ids into their damage name
@@ -271,13 +277,15 @@ def global_stats() -> dict:
             labels = [canonical(d.label) for d in run.detections]
             current[slug] = {"run_id": rid, "count": len(labels), "labels": labels,
                              "max_conf": max([d.confidence for d in run.detections], default=0.0),
-                             "at": run.created_at}
+                             "at": run.created_at, "is_demo": run.is_demo}
         recent = s.scalars(select(DetectionRun).order_by(DetectionRun.created_at.desc()).limit(8)).all()
         recent_list = [{"slug": r.monument_slug, "at": r.created_at, "count": len(r.detections),
-                        "source": r.image.source, "kind": r.image.kind} for r in recent]
+                        "source": r.image.source, "kind": r.image.kind, "is_demo": r.is_demo} for r in recent]
         recent_imgs = s.scalars(select(ImageRecord).order_by(ImageRecord.added_at.desc()).limit(8)).all()
         recent_img_list = [{"slug": i.monument_slug, "at": i.added_at, "source": i.source, "kind": i.kind}
                            for i in recent_imgs]
     return {"images": n_images, "runs": n_runs, "detections": n_dets, "by_class": by_class,
+            "reference_runs": ref_runs, "reference_detections": ref_dets,
+            "model_runs": n_runs - ref_runs, "model_detections": n_dets - ref_dets,
             "images_by_monument": imgs_by_m, "current": current, "recent_runs": recent_list,
             "recent_images": recent_img_list}

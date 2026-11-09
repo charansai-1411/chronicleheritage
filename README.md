@@ -35,7 +35,29 @@ static file serving so the browser can load the 3D models.
 ### Required files you must supply
 | File | Purpose | Without it |
 |---|---|---|
-| `models/weights/yolo26l_heritage.pt` | your trained YOLO26l `best.pt` | detection is disabled with a clear message; no placeholder predictions are shown |
+| `models/weights/yolo26l_heritage.pt` | your trained YOLO26l `best.pt` | detection is disabled; the app shows **hand-marked reference annotations** instead, labelled as such everywhere (see below). No placeholder predictions are ever shown |
+
+### While the detector is untrained: hand annotations
+
+Without weights there is nothing for sections 04, 05 and 08 to work on, so the project team
+marks damage **by eye** on real photographs and stores those marks in `data/annotations.json`:
+
+```bash
+python scripts/seed_annotations.py          # load / refresh them
+python scripts/seed_annotations.py --clear  # remove them
+```
+
+They are stored as runs with `is_demo = True` and the model name
+`Hand annotation (not a model prediction)`. Everywhere they appear — section 03, the 3D twin,
+Gemini's input, the monitoring history, the PDF report and the dashboard — the app says they are
+hand annotations and not model output, and the rendered image carries the same statement burnt
+into the picture so a screenshot cannot be mistaken for a detection result either. No confidence
+score is shown, because a hand mark has none.
+
+They are also the detector's first test set: once the weights land, run the model on the same
+images and compare its boxes against these.
+
+Currently annotated: Golconda Fort (7), Ellora Caves (5), Qutb Shahi Tombs (4), Charminar (3).
 
 After adding the weights, run `python scripts/check_model.py` once. It prints the class names stored
 in the weights next to the names the app will show. If your export named the classes `0`–`6` instead
@@ -92,6 +114,7 @@ core/
   acquisition.py          Image Acquisition – Esri Wayback (dated satellite), Wikimedia Commons, uploads
   detection.py            YOLO26l Detection – inference, class normalisation, annotation
   damage_reference.py     7 damage classes: colours, markers, literature causes/prevention
+  annotation.py           Hand-marked reference annotations used while the detector is untrained
   viewer3d.py             3D Visualization – Three.js, facade projection + ray-casting
   explain.py              AI Damage Explanation – Gemini, cached, hypothesis-framed
   compare.py              Historical Comparison – ORB+RANSAC registration, CLAHE, SSIM
@@ -108,7 +131,9 @@ tests/test_core.py        pytest suite
 * Every image keeps its **actual acquisition date and source**. Satellite capture dates come
   from Esri's imagery-metadata service. If a date is unknown, the app says so.
 * Dashboard numbers are **computed from the database**; nothing is hardcoded.
-* Detections come only from real model inference. `is_demo` is never set by the app.
+* Detections come only from real model inference. `is_demo` is set by exactly one thing —
+  `scripts/seed_annotations.py`, loading damage the team marked by hand — and every surface that
+  reads it says so. Inference always writes it `False`, so the two can never be confused.
 * 3D marker positions are **approximate**. A box is projected from the facade the photo
   shows onto the mesh. This is a manual spatial correspondence, not photogrammetry. To
   place markers precisely, add camera poses from COLMAP to the calibration file

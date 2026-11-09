@@ -14,7 +14,7 @@ from reportlab.platypus import (Image as RLImage, KeepTogether, PageBreak, Parag
                                 Table, TableStyle)
 
 from config import settings
-from core import database as db
+from core import annotation, database as db
 from core.damage_reference import DAMAGE
 from core.monuments import Monument
 
@@ -107,30 +107,43 @@ def build(m: Monument) -> Path:
         s.append(Paragraph("No images stored yet.", BODY))
 
     runs = db.runs_for(m.slug)
-    s.append(Paragraph("3. Damage detection (YOLO26l)", H2))
+    ref = annotation.is_reference(runs[0]) if runs else False
+    s.append(Paragraph("3. Damage findings — hand annotation (detector not trained)" if ref
+                       else "3. Damage detection (YOLO26l)", H2))
+    if ref:
+        s.append(Paragraph("<b>These findings are not model output.</b> The YOLO26l weights are not yet installed, "
+                           "so the damage below was marked by eye by the project team on the photograph shown, and "
+                           "is reported here as a hand annotation. No confidence score exists for a hand mark. "
+                           "Everything else in this report — imagery, capture dates, sources and comparisons — is "
+                           "recorded fact.", SMALL))
     if not runs:
         s.append(Paragraph("No detection run has been stored for this monument. No damage findings are reported.", BODY))
     else:
         r = runs[0]
         acq = r["image"]["acquired_on"]
         acq_s = f"acquired {acq:%d %b %Y}" if acq else "acquisition date unknown"
-        s.append(Paragraph(f"Latest run #{r['id']} · {r['created_at']:%d %b %Y %H:%M} UTC · model {r['model']} "
-                           f"(weights {r['weights_sha']}) · confidence ≥ {r['conf']:.2f} · image: {r['image']['kind']}, "
-                           f"{r['image']['source']}, {acq_s}", SMALL))
+        origin = (f"{r['model']}" if ref
+                  else f"model {r['model']} (weights {r['weights_sha']}) · confidence &ge; {r['conf']:.2f}")
+        s.append(Paragraph(f"Latest record #{r['id']} · {r['created_at']:%d %b %Y %H:%M} UTC · {origin} · "
+                           f"image: {r['image']['kind']}, {r['image']['source']}, {acq_s}", SMALL))
         if r["annotated_path"] and Path(r["annotated_path"]).exists():
             s += [Spacer(1, 4), _img(r["annotated_path"], W, 95 * mm)]
         dets = r["detections"]
         if dets:
-            s += [Spacer(1, 6), _table([["#", "Category", "Confidence", "Image location (u, v)", "3D location"]] + [
-                [str(i), d["label"], f"{d['confidence']:.1%}", f"{d['u']:.2f}, {d['v']:.2f}", f"{r['facade'] or '—'} facade · approximate"]
-                for i, d in enumerate(dets, 1)], [10 * mm, 52 * mm, 24 * mm, 36 * mm, W - 122 * mm])]
+            notes = annotation.notes_for(m.slug) if ref else []
+            conf_head = "Marked as" if ref else "Confidence"
+            s += [Spacer(1, 6), _table([["#", "Category", conf_head, "Image location (u, v)", "3D location"]] + [
+                [str(i), d["label"],
+                 (notes[i - 1] if i <= len(notes) else "hand annotation") if ref else f"{d['confidence']:.1%}",
+                 f"{d['u']:.2f}, {d['v']:.2f}", f"{r['facade'] or '—'} facade · approximate"]
+                for i, d in enumerate(dets, 1)], [10 * mm, 48 * mm, 40 * mm, 28 * mm, W - 126 * mm])]
             cnt = Counter(d["label"] for d in dets)
             s.append(Paragraph("4. Possible causes & recommendations", H2))
             s.append(Paragraph("Text below marked <b>AI-generated</b> is a Gemini hypothesis; text marked "
                                "<b>reference</b> is general conservation literature. Neither is an expert-confirmed finding.", SMALL))
             for label, n in cnt.most_common():
                 c = db.cached_explanation(m.slug, label)
-                block = [Paragraph(f"{label} — {n} detection(s) · {'AI-generated (' + c.model + ')' if c else 'reference'}", H3)]
+                block = [Paragraph(f"{label} — {n} {'hand annotation' if ref else 'detection'}(s) · {'AI-generated (' + c.model + ')' if c else 'reference'}", H3)]
                 if c:
                     block += _md(c.text)
                 else:
@@ -139,7 +152,7 @@ def build(m: Monument) -> Path:
                               Paragraph("Recommended: " + "; ".join(ref.get("prevention", [])) + ".", BODY)]
                 s.append(KeepTogether(block))
         else:
-            s.append(Paragraph("The latest run detected no damage above the confidence threshold.", BODY))
+            s.append(Paragraph("The latest record contains no damage findings.", BODY))
         if len(runs) > 1:
             s += [Paragraph("Monitoring history", H3), _table([["Run", "Date", "Image", "Detections"]] + [
                 [str(x["id"]), f"{x['created_at']:%d %b %Y}", x["image"]["kind"], str(len(x["detections"]))] for x in runs],
