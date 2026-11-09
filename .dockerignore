@@ -4,6 +4,7 @@ __pycache__
 *.pyc
 .pytest_cache
 data/chroma
-data/results
+# runtime output only; the hand-annotated reference images must ship with the app
+data/results/*/run_*.jpg
 data/uploads
 reports/*.pdf

@@ -5,7 +5,9 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/chroma/
-data/results/
+# data/results holds runtime output, except the hand-annotated reference images,
+# which the deployed app must be able to show.
+data/results/*/run_*.jpg
 data/uploads/
 reports/*.pdf
 models/weights/*.pt
