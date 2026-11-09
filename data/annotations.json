@@ -34,7 +34,7 @@
         {"label": "Discolouration", "box": [0.296, 0.166, 0.488, 0.269], "note": "Blackened soiling crust over the upper dome"},
         {"label": "Discolouration", "box": [0.571, 0.437, 0.704, 0.508], "note": "Same crust on the second minaret dome"},
         {"label": "Discolouration", "box": [0.0, 0.654, 0.268, 0.714], "note": "Dark band sheltered beneath the cornice"},
-        {"label": "Surface Dissolution", "box": [0.013, 0.813, 0.268, 0.977], "note": "Lime render washed back to an open, pitted surface"}
+        {"label": "Surface Dissolution", "box": [0.105, 0.878, 0.272, 0.972], "note": "Lime render washed back to an open, pitted surface"}
       ]
     },
     {
