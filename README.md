@@ -53,6 +53,31 @@ check that order against the `names:` block of your training `data.yaml` and fix
 
 The original repo's "Fatehpur Sikri" GLB was actually a 360° photo sphere of a room interior ("Fatehpur Mosque with Boy"), so it was replaced. Parametric models are built from documented dimensions and orientations (e.g. Sanchi dome 36.6 m, Brihadisvara 13-tier vimana, Konark's 24 wheels and 7 horses facing east, Lahori Gate facing west). They show the correct form and layout, but they are not scans, and the viewer labels them **parametric approximation**. To replace one, drop a photogrammetry or COLMAP GLB at `static/models3d/<slug>.glb`.
 
+## Training the damage model
+
+There is no public pretrained model for these seven classes (Hugging Face has only
+binary crack detectors), so the detector has to be fine-tuned on the project dataset.
+Fine-tuning means starting from the COCO-pretrained `yolo26l.pt` checkpoint, which
+Ultralytics downloads automatically — not training randomly-initialised weights, which
+would need hundreds of thousands of images.
+
+```bash
+python scripts/train.py --data <dataset-root> --check-only   # inspect counts and class ids
+python scripts/train.py --data <dataset-root>                # fine-tune yolo26l, 100 epochs
+```
+
+`--check-only` reports images, boxes and class balance per split and flags classes with
+no or very few boxes. The script writes `data.yaml` itself with the class names in
+`DAMAGE_CLASSES` order, so the trained model carries real names and the app never has to
+guess a label from its class id. When training finishes it prints per-class mAP and copies
+`best.pt` to `models/weights/yolo26l_heritage.pt`, which switches detection on in the app.
+
+On a 6 GB GPU, start with `--model yolo26s.pt --epochs 20` to confirm the pipeline, then
+run `yolo26l` for the numbers you report.
+
+The seven categories match **MSD-Det** (*Journal of Cultural Heritage*, 2025), the published
+masonry heritage damage dataset.
+
 ## Workflow (single scrolling page, card navigation, no sidebar, nav bar or tabs)
 Dashboard → monument card → **§01** dossier → **§02** imagery (acquire/upload) → **§03** YOLO26l
 detection → **§04** 3D damage view → **§05** Gemini possible causes → **§06** historical

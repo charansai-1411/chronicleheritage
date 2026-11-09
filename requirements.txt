@@ -9,6 +9,7 @@ python-dotenv>=1.0
 SQLAlchemy>=2.0
 # AI / CV
 ultralytics>=8.3.200   # YOLO26 support
+polars                 # ultralytics writes training results with it
 torch                   # CPU build comes from the extra index above (no CUDA download)
 torchvision
 opencv-python-headless>=4.9
