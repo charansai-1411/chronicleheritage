@@ -1,3 +1,14 @@
+---
+title: ChronicleHeritage
+emoji: 🏛️
+colorFrom: blue
+colorTo: yellow
+sdk: docker
+app_port: 7860
+pinned: false
+short_description: AI heritage monitoring with 3D damage visualisation
+---
+
 # ChronicleHeritage
 
 **An AI-driven digital twin and threat-assessment platform for endangered monuments.**
@@ -25,6 +36,12 @@ static file serving so the browser can load the 3D models.
 | File | Purpose | Without it |
 |---|---|---|
 | `models/weights/yolo26l_heritage.pt` | your trained YOLO26l `best.pt` | detection is disabled with a clear message; no placeholder predictions are shown |
+
+After adding the weights, run `python scripts/check_model.py` once. It prints the class names stored
+in the weights next to the names the app will show. If your export named the classes `0`–`6` instead
+of the damage names, the app maps them **by position** into `DAMAGE_CLASSES` in `config/settings.py` —
+check that order against the `names:` block of your training `data.yaml` and fix it there if it differs.
+
 | `.env` → `GEMINI_API_KEY` | AI explanations + conversational chatbot | general reference text is shown instead, and the chatbot only returns retrieved passages |
 | `static/models3d/<slug>.glb` | 3D model per monument | placeholder massing geometry, labelled as a placeholder |
 

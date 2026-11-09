@@ -8,7 +8,7 @@ import streamlit as st
 
 from config import settings
 from core import database as db
-from core.damage_reference import DAMAGE
+from core.damage_reference import DAMAGE, color as dmg_color
 from core.monuments import condition_of, load_monuments
 from ui.components import credit_line, cover_url, empty, esc, masthead, md, section, status_pill
 
@@ -67,7 +67,7 @@ def render() -> None:
         md('<div class="kicker" style="margin-bottom:8px">Damage distribution · all stored detections</div>')
         labels = list(DAMAGE)
         vals = [by_class.get(k, 0) for k in labels]
-        fig = go.Figure(go.Bar(x=vals, y=labels, orientation="h", marker=dict(color=[DAMAGE[k]["color"] for k in labels],
+        fig = go.Figure(go.Bar(x=vals, y=labels, orientation="h", marker=dict(color=[dmg_color(k) for k in labels],
                         line=dict(width=0)), text=[str(v) for v in vals], textposition="outside",
                         hovertemplate="%{y}: %{x}<extra></extra>"))
         fig.update_layout(height=330, margin=dict(l=0, r=30, t=6, b=10), paper_bgcolor="rgba(0,0,0,0)",

@@ -16,7 +16,7 @@ from PIL import Image
 
 from config import settings
 from core import acquisition, compare, database as db, detection, explain, rag, reports, viewer3d
-from core.damage_reference import DAMAGE
+from core.damage_reference import DAMAGE, color as dmg_color
 from core.monuments import Monument, condition_of
 from ui.components import (before_after, cover_url, credit_line, empty, esc, masthead, md, section, status_pill)
 
@@ -163,6 +163,15 @@ def _detection(m: Monument, images: list) -> None:
     if not images:
         empty("Nothing to analyse", "Add an image first", "Acquire or upload imagery in § 02.")
         return
+    try:
+        if detection.names_are_positional():
+            md('<span class="tag-warn">Class names assumed</span> <span class="imgmeta">The weights name their '
+               'classes numerically, so ids are mapped by position: '
+               + ", ".join(f"{i} → {c}" for i, c in enumerate(settings.DAMAGE_CLASSES))
+               + '. Run <code>python scripts/check_model.py</code> and confirm this against your training '
+                 'data.yaml before relying on the labels.</span>')
+    except detection.DetectorUnavailable:
+        pass
     c1, c2, c3 = st.columns([2.2, 1, 1])
     choice = c1.selectbox("Image to analyse", images, format_func=_img_label, key="det_img")
     facade = c2.selectbox("Facade shown (for 3D mapping)", FACADES,
@@ -267,7 +276,7 @@ def _explanations(m: Monument, run: dict | None) -> None:
             tag = ('<span class="tag-ai">AI-generated hypothesis · ' + esc(r["model"]) + "</span>") if r["source"] != "reference" \
                 else '<span class="tag-ref">General reference · Gemini unavailable</span>'
             md(f'<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px">'
-               f'<div class="kicker"><span class="dot" style="background:{DAMAGE[label]["color"]}"></span> {n} detection(s) · max {best:.0%}</div>{tag}</div>'
+               f'<div class="kicker"><span class="dot" style="background:{dmg_color(label)}"></span> {n} detection(s) · max {best:.0%}</div>{tag}</div>'
                f'<h3>{esc(label)}</h3></div>')
             st.markdown(r["text"])
     md('<div class="imgmeta">These are <b>possible</b> causes, not expert-confirmed findings. Refer active structural issues to qualified conservators / ASI.</div>')

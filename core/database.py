@@ -18,6 +18,7 @@ from sqlalchemy import (JSON, Boolean, DateTime, Float, ForeignKey, Integer, Str
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 
 from config import settings
+from core.damage_reference import canonical
 
 engine = create_engine(settings.DATABASE_URL, pool_pre_ping=True,
                        connect_args={"check_same_thread": False} if settings.DATABASE_URL.startswith("sqlite") else {})
@@ -216,7 +217,9 @@ def _run_dict(r: DetectionRun) -> dict:
         "created_at": r.created_at, "is_demo": r.is_demo,
         "image": {"path": img.path, "kind": img.kind, "source": img.source, "acquired_on": img.acquired_on,
                   "date_note": img.date_note, "attribution": img.attribution},
-        "detections": [{"id": d.id, "label": d.label, "confidence": d.confidence,
+        # labels are normalised on read, so runs stored by an older build (or by a model
+        # whose classes are named "0".."6") display correctly without rewriting the rows
+        "detections": [{"id": d.id, "label": canonical(d.label), "raw_label": d.label, "confidence": d.confidence,
                         "box": [d.x1, d.y1, d.x2, d.y2], "u": d.u, "v": d.v, "mapping": d.mapping}
                        for d in r.detections],
     }
@@ -253,7 +256,10 @@ def global_stats() -> dict:
         n_images = s.scalar(select(func.count(ImageRecord.id))) or 0
         n_runs = s.scalar(select(func.count(DetectionRun.id))) or 0
         n_dets = s.scalar(select(func.count(Detection.id))) or 0
-        by_class = dict(s.execute(select(Detection.label, func.count(Detection.id)).group_by(Detection.label)).all())
+        by_class: dict[str, int] = {}
+        for lbl, n in s.execute(select(Detection.label, func.count(Detection.id)).group_by(Detection.label)).all():
+            key = canonical(lbl)                      # merge raw ids into their damage name
+            by_class[key] = by_class.get(key, 0) + n
         imgs_by_m = dict(s.execute(select(ImageRecord.monument_slug, func.count(ImageRecord.id))
                                    .group_by(ImageRecord.monument_slug)).all())
         # latest run per monument -> its detections are the "current condition"
@@ -262,7 +268,7 @@ def global_stats() -> dict:
         current: dict[str, dict] = {}
         for slug, rid in latest_ids:
             run = s.get(DetectionRun, rid)
-            labels = [d.label for d in run.detections]
+            labels = [canonical(d.label) for d in run.detections]
             current[slug] = {"run_id": rid, "count": len(labels), "labels": labels,
                              "max_conf": max([d.confidence for d in run.detections], default=0.0),
                              "at": run.created_at}

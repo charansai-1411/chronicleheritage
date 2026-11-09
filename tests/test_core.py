@@ -92,3 +92,29 @@ def test_every_monument_has_a_valid_glb():
         js = json.loads(b[20:20 + n])
         assert js.get("meshes"), m.slug
         assert js["asset"].get("extras", {}).get("title"), f"{m.slug} has no provenance"
+
+
+def test_numeric_class_labels_map_to_damage_names():
+    """Regression: a model whose classes are named "0".."6" produced KeyError: '6'."""
+    from core.damage_reference import DAMAGE, canonical, color
+    for i, expected in enumerate(settings.DAMAGE_CLASSES):
+        assert canonical(str(i)) == expected
+        assert canonical(i) == expected
+    assert canonical("6") == "Surface Dissolution"
+    # spelling variants
+    assert canonical("discoloration") == "Discolouration"
+    assert canonical("CRACKS") == "Crack"
+    # out-of-range / unknown labels survive instead of crashing
+    assert canonical("99") == "99"
+    assert canonical("Rust") == "Rust"
+    assert color("99") and color("Rust") and color("6") == DAMAGE["Surface Dissolution"]["color"]
+
+
+def test_stored_numeric_labels_are_normalised_on_read():
+    img = db.add_image(monument_slug="hampi", kind="ground", source="test", path="x.jpg")
+    rid = db.save_run(img.id, "hampi", "YOLO26l", "abc", 0.25, "south", "",
+                      [{"label": "6", "confidence": 0.5, "box": [0, 0, 1, 1], "u": .5, "v": .5}])
+    run = next(r for r in db.runs_for("hampi") if r["id"] == rid)
+    assert run["detections"][0]["label"] == "Surface Dissolution"
+    assert run["detections"][0]["raw_label"] == "6"          # the row itself is untouched
+    assert "6" not in db.global_stats()["by_class"]
