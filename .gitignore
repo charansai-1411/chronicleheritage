@@ -13,3 +13,6 @@ data/results/
 reports/*.pdf
 # trained weights are added separately (see models/weights/README.md)
 models/weights/*.pt
+
+# report build artefacts
+docs/*.zip

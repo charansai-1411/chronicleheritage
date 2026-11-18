@@ -12,7 +12,7 @@ from __future__ import annotations
 from functools import lru_cache
 
 from config import settings
-from core import database as db
+from core import annotation, database as db
 from core import llm
 from core.damage_reference import DAMAGE
 from core.monuments import Monument
@@ -73,13 +73,21 @@ def monitoring_context(m: Monument) -> str:
         dets = run["detections"]
         when = run["image"]["acquired_on"]
         acq = f"acquired {when:%d %b %Y}" if when else "acquisition date unknown"
-        lines.append(f"Latest detection run #{run['id']} on {run['created_at']:%d %b %Y} using {run['model']}, "
+        ref = annotation.is_reference(run)
+        kind = "record" if ref else "detection run"
+        lines.append(f"Latest {kind} #{run['id']} on {run['created_at']:%d %b %Y} using {run['model']}, "
                      f"on a {run['image']['kind']} image from {run['image']['source']} ({acq}).")
+        if ref:
+            lines.append("IMPORTANT: these findings were marked by hand by the project team, not predicted "
+                         "by the detector, and they carry no confidence score. Say so if you report them.")
         if dets:
             by = {}
             for d in dets:
                 by.setdefault(d["label"], []).append(d["confidence"])
-            lines.append("Detected: " + "; ".join(f"{k} ×{len(v)} (max confidence {max(v):.0%})" for k, v in by.items()) + ".")
+            noun = "Marked by hand" if ref else "Detected"
+            lines.append(noun + ": " + "; ".join(
+                (f"{k} ×{len(v)}" if ref else f"{k} ×{len(v)} (max confidence {max(v):.0%})")
+                for k, v in by.items()) + ".")
         else:
             lines.append("That run detected no damage above the confidence threshold.")
     for label in {d["label"] for d in (run or {}).get("detections", [])}:
